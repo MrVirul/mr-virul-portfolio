@@ -15,8 +15,8 @@ const Navbar = () => {
         </a>
         <ul className="hidden md:flex items-center gap-6 lg:gap-8">
           <li>
-            <a href="#top">Home</a>
-          </li>
+            <a className='font-Fira_Code' href="#top">Home</a>
+          </li> 
           <li>
             <a href="#about">About me</a>
           </li>

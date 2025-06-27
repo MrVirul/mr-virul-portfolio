@@ -1,9 +1,10 @@
-import { Outfit,Ovo } from "next/font/google";
+import { Fira_Code, Ovo } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
+const fira_Code = Fira_Code({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
+   variable: '--font-fira-code'
 });
 
 const ovo = Ovo({
@@ -19,7 +20,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${outfit.className} ${ovo.className} antialiased`}>
+      <body className={`${fira_Code.className} ${ovo.className} antialiased`}>
         {children}
       </body>
     </html>
