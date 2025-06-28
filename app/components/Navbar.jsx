@@ -5,6 +5,9 @@ import Image from "next/image";
 const Navbar = () => {
   return (
     <>
+    <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
+      <Image src={assets.header_bg_color} alt="Header Background" className="w-full" />
+    </div>
       <nav className="w-full fixed px-5 lg:px-8 xl:px:[8%] py-4 flex items-center justify-between bg- z-50">
         <a href="#top">
           <Image
@@ -13,10 +16,12 @@ const Navbar = () => {
             className="w-28 cursor-pointer mr-14"
           />
         </a>
-        <ul className="hidden md:flex items-center gap-6 lg:gap-8">
+        <ul className="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacityy-50 backdrop-blur-md text-black font-semibold">
           <li>
-            <a className='font-Fira_Code' href="#top">Home</a>
-          </li> 
+            <a className="font-Fira_Code" href="#top">
+              Home
+            </a>
+          </li>
           <li>
             <a href="#about">About me</a>
           </li>
