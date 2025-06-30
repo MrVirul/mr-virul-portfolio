@@ -58,6 +58,8 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="flex items-center gap-4">
+
+          
           {/* Contact button for mobile view */}
           <a
             href="#contact"
