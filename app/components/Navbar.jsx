@@ -1,16 +1,16 @@
 import { assets } from "@/assets/assets";
 import React from "react";
 import Image from "next/image";
- 
+
 const Navbar = () => {
   const sideMenueRef = React.useRef();
-  
+
   const openMenu = () => {
-    sideMenueRef.current.style.transform = 'translateX(-16rem)';
+    sideMenueRef.current.style.transform = "translateX(-16rem)";
   };
-  
+
   const closeMenu = () => {
-    sideMenueRef.current.style.transform = 'translateX(16rem)';
+    sideMenueRef.current.style.transform = "translateX(16rem)";
   };
 
   return (
@@ -30,23 +30,31 @@ const Navbar = () => {
             className="w-28 cursor-pointer mr-14"
           />
         </a>
-        <ul className="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 backdrop-blur-md text-black font-semibold">
+        <ul className="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 backdrop-blur-md text-gray-800"> 
           <li>
             <a className="font-Fira_Code" href="#top">
               Home
             </a>
           </li>
           <li>
-            <a className="fira-code" href="#about">About me</a>
+            <a className="font-Fira_Code" href="#about">
+              About me
+            </a>
           </li>
           <li>
-            <a className="fira-code" href="#services">Services</a>
+            <a className="font-Fira_Code" href="#services">
+              Services
+            </a>
           </li>
           <li>
-            <a className="fira-code" href="#work">My work</a>
+            <a className="font-Fira_Code" href="#work">
+              My work
+            </a>
           </li>
           <li>
-            <a className="fira-code" href="#contact">Contact me</a>
+            <a className="font-Fira_Code" href="#contact">
+              Contact me
+            </a>
           </li>
         </ul>
         <div className="flex items-center gap-4">
@@ -79,14 +87,18 @@ const Navbar = () => {
             <Image src={assets.menu_black} alt="" className="w-6" />
           </button>
         </div>
-        
+
         {/* Mobile menu */}
-        <ul 
-          ref={sideMenueRef} 
+        <ul
+          ref={sideMenueRef}
           className="flex md:hidden flex-col gap-4 py-20 px-10 fixed right-0 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition-transform duration-500 transform translate-x-full"
         >
           <div className="absolute right-6 top-6" onClick={closeMenu}>
-            <Image src={assets.close_black} alt='' className="w-5 cursor-pointer" />
+            <Image
+              src={assets.close_black}
+              alt=""
+              className="w-5 cursor-pointer"
+            />
           </div>
           <li>
             <a className="font-Fira_Code" onClick={closeMenu} href="#top">
@@ -94,16 +106,24 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a className="fira-code" onClick={closeMenu} href="#about">About me</a>
+            <a className="font-Fira_Code" href="#about">
+              About me
+            </a>
           </li>
           <li>
-            <a className="fira-code" onClick={closeMenu} href="#services">Services</a>
+            <a className="font-Fira_Code" href="#services">
+              Services
+            </a>
           </li>
           <li>
-            <a className="fira-code" onClick={closeMenu} href="#work">My work</a>
+            <a className="font-Fira_Code" href="#work">
+              My work
+            </a>
           </li>
           <li>
-            <a className="fira-code" onClick={closeMenu} href="#contact">Contact me</a>
+            <a className="font-Fira_Code" href="#contact">
+              Contact me
+            </a>
           </li>
         </ul>
       </nav>
