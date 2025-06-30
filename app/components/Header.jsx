@@ -4,7 +4,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="text-center py-32 px-4">
+    <div className="text-center py-24 px-4">
       {/* Profile Image */}
       <div className="mb-8">
         <Image
@@ -44,8 +44,8 @@ const Header = () => {
           href="#contact"
           className="px-8 py-3 bg-black text-white rounded-full flex items-center gap-2 hover:bg-gray-800 transition-colors"
         >
-          Contact Me
-          <Image
+          connect with me 
+            <Image
             src={assets.right_arrow_white}
             alt="right arrow"
             className="w-4 h-4"
