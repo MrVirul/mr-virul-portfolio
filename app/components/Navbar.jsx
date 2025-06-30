@@ -1,44 +1,60 @@
 import { assets } from "@/assets/assets";
 import React from "react";
 import Image from "next/image";
-
+ 
 const Navbar = () => {
+  const sideMenueRef = React.useRef();
+  
+  const openMenu = () => {
+    sideMenueRef.current.style.transform = 'translateX(-16rem)';
+  };
+  
+  const closeMenu = () => {
+    sideMenueRef.current.style.transform = 'translateX(16rem)';
+  };
+
   return (
     <>
-    <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
-      <Image src={assets.header_bg_color} alt="Header Background" className="w-full" />
-    </div>
-      <nav className="w-full fixed px-5 lg:px-8 xl:px:[8%] py-4 flex items-center justify-between bg- z-50">
+      <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
+        <Image
+          src={assets.header_bg_color}
+          alt="Header Background"
+          className="w-full"
+        />
+      </div>
+      <nav className="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between bg- z-50">
         <a href="#top">
           <Image
             src={assets.logo}
-            al="Virul logo"
+            alt="Virul logo"
             className="w-28 cursor-pointer mr-14"
           />
         </a>
-        <ul className="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacityy-50 backdrop-blur-md text-black font-semibold">
+        <ul className="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 backdrop-blur-md text-black font-semibold">
           <li>
             <a className="font-Fira_Code" href="#top">
               Home
             </a>
           </li>
           <li>
-            <a href="#about">About me</a>
+            <a className="fira-code" href="#about">About me</a>
           </li>
-
           <li>
-            <a href="#services">Services</a>
+            <a className="fira-code" href="#services">Services</a>
           </li>
-
           <li>
-            <a href="#work">My work</a>
+            <a className="fira-code" href="#work">My work</a>
           </li>
-
           <li>
-            <a href="#contact">Contact me</a>
+            <a className="fira-code" href="#contact">Contact me</a>
           </li>
         </ul>
-        <div>
+        <div className="flex items-center gap-4">
+          <button>
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+            </svg>
+          </button>
           <a
             href="#contact"
             className="hidden lg:flex items-center gap-3 px-10 py-2.5 border-gray-400 border rounded-full ml-4 hover:bg-black hover:text-white transition-colors duration-300"
@@ -59,7 +75,37 @@ const Navbar = () => {
               />
             </svg>
           </a>
+          <button className="block md:hidden ml-3" onClick={openMenu}>
+            <Image src={assets.menu_black} alt="" className="w-6" />
+          </button>
         </div>
+        
+        {/* Mobile menu */}
+        <ul 
+          ref={sideMenueRef} 
+          className="flex md:hidden flex-col gap-4 py-20 px-10 fixed right-0 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition-transform duration-500 transform translate-x-full"
+        >
+          <div className="absolute right-6 top-6" onClick={closeMenu}>
+            <Image src={assets.close_black} alt='' className="w-5 cursor-pointer" />
+          </div>
+          <li>
+            <a className="font-Fira_Code" onClick={closeMenu} href="#top">
+              Home
+            </a>
+          </li>
+          <li>
+            <a className="fira-code" onClick={closeMenu} href="#about">About me</a>
+          </li>
+          <li>
+            <a className="fira-code" onClick={closeMenu} href="#services">Services</a>
+          </li>
+          <li>
+            <a className="fira-code" onClick={closeMenu} href="#work">My work</a>
+          </li>
+          <li>
+            <a className="fira-code" onClick={closeMenu} href="#contact">Contact me</a>
+          </li>
+        </ul>
       </nav>
     </>
   );
