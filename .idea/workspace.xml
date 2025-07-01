@@ -48,6 +48,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
     "last_opened_file_path": "D:/mrvirul-portfolio",
@@ -98,6 +99,7 @@
       <workItem from="1751353024952" duration="25000" />
       <workItem from="1751353431949" duration="14000" />
       <workItem from="1751353451850" duration="60000" />
+      <workItem from="1751354292798" duration="319000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add About component; enhance layout, styling, and functionality across components">
       <option name="closed" value="true" />
@@ -115,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751352220878</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="chore: add IntelliJ project configuration files to version control">
+      <option name="closed" value="true" />
+      <created>1751354340578</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1751354340578</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +137,7 @@
     <MESSAGE value="refactor: adjust padding in Header component for improved spacing" />
     <MESSAGE value="refactor: adjust padding in Header component for consistent spacing" />
     <MESSAGE value="refactor: improve Navbar code structure, add aria labels, and enhance hover effects" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: improve Navbar code structure, add aria labels, and enhance hover effects" />
+    <MESSAGE value="chore: add IntelliJ project configuration files to version control" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: add IntelliJ project configuration files to version control" />
   </component>
 </project>
