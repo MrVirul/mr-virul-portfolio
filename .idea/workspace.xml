@@ -99,7 +99,7 @@
       <workItem from="1751353024952" duration="25000" />
       <workItem from="1751353431949" duration="14000" />
       <workItem from="1751353451850" duration="60000" />
-      <workItem from="1751354292798" duration="319000" />
+      <workItem from="1751354292798" duration="776000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add About component; enhance layout, styling, and functionality across components">
       <option name="closed" value="true" />
@@ -125,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751354340578</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="chore: add IntelliJ project configuration files to version control">
+      <option name="closed" value="true" />
+      <created>1751354857666</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1751354857666</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
