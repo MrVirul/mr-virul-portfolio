@@ -22,7 +22,7 @@ const Navbar = () => {
                     className="w-full"
                 />
             </div>
-            <nav className="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between bg- z-50">
+            <nav className="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between bg-white/95 backdrop-blur-md z-50">
                 <a href="#top">
                     <Image
                         src={assets.logo}
