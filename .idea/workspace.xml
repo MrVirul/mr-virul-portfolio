@@ -54,7 +54,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "ContatctMe-section",
+    "git-widget-placeholder": "main",
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
     "last_opened_file_path": "D:/mr-virul-portfolio",
@@ -115,6 +115,7 @@
       <workItem from="1752489354040" duration="298000" />
       <workItem from="1752642869991" duration="10000" />
       <workItem from="1752643583063" duration="654000" />
+      <workItem from="1752646469207" duration="279000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add About component; enhance layout, styling, and functionality across components">
       <option name="closed" value="true" />
