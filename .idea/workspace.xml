@@ -111,7 +111,9 @@
       <workItem from="1752134118129" duration="1062000" />
       <workItem from="1752469339040" duration="510000" />
       <workItem from="1752470366470" duration="4577000" />
-      <workItem from="1752488933619" duration="180000" />
+      <workItem from="1752488933619" duration="369000" />
+      <workItem from="1752489354040" duration="298000" />
+      <workItem from="1752642869991" duration="10000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add About component; enhance layout, styling, and functionality across components">
       <option name="closed" value="true" />
