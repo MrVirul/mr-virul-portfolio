@@ -21,10 +21,10 @@ const Header = () => {
   <div className="mb-8 animate-fade-in-up">
     <div className="relative group">
         <Image
-            src={assets.profile_img}
+          src={assets.profile_img}
             alt="Virul Meemana - Frontend Developer"
-            className="rounded-full w-36 h-36 mx-auto object-cover border-4 border-[#22D3EE] shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:shadow-[0_0_30px_rgba(34,211,238,0.5)]"
-        />
+            className="rounded-full w-36 h-36 mx-auto object-cover border-4 border-[#22D3EE] shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:shadow-[0_0_30px_rgba(34,211,238,0.5)] profile-image-container"
+          />
         <div className="absolute inset-0 rounded-full bg-gradient-to-t from-[#22D3EE]/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105"></div>
     </div>
 </div>

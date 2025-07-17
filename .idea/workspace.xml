@@ -9,7 +9,15 @@
   <component name="ChangeListManager">
     <list default="true" id="5ad89fdb-bd76-4f62-a759-ec2ac226bea9" name="Changes" comment="feat: add Services component and integrate it into the Home page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/About.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Contact.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Services.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Services.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Work.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Work.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/assets.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/git.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/git.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,29 +55,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "js.debugger.nextJs.config.created.client": "true",
-    "js.debugger.nextJs.config.created.server": "true",
-    "last_opened_file_path": "D:/mr-virul-portfolio",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.Next.js: server-side.executor": "Run",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2025.1.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/mr-virul-portfolio&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.Next.js: server-side.executor&quot;: &quot;Run&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2025.1.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="npm.Next.js: server-side">
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
@@ -116,6 +124,7 @@
       <workItem from="1752642869991" duration="10000" />
       <workItem from="1752643583063" duration="654000" />
       <workItem from="1752646469207" duration="279000" />
+      <workItem from="1752661331819" duration="740000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add About component; enhance layout, styling, and functionality across components">
       <option name="closed" value="true" />
