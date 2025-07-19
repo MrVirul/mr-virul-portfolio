@@ -1,16 +1,16 @@
-import { Fira_Code, Ovo } from "next/font/google";
+import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 
-const fira_Code = Fira_Code({
+const inter = Inter({
     subsets: ["latin"],
-    weight: ["300", "400", "500", "600", "700"],
-    variable: '--font-fira-code'
+    weight: ["400", "500", "600", "700"],
+    variable: '--font-inter'
 });
 
-const ovo = Ovo({
+const sora = Sora({
     subsets: ["latin"],
-    weight: ["400"],
-    variable: '--font-ovo' // Add this line
+    weight: ["400", "500", "600", "700"],
+    variable: '--font-sora'
 });
 
 export const metadata = {
@@ -21,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en" className="scroll-smooth">
-        <body className={`${fira_Code.variable} ${ovo.variable} antialiased leading-8 overflow-x-hidden`}>
+        <body className={`${inter.variable} ${sora.variable} antialiased leading-8 overflow-x-hidden`}>
         {children}
         </body>
         </html>

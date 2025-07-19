@@ -1,8 +1,56 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaArrowUp, FaHeart } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaArrowUp, FaHeart, FaCode, FaCoffee } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
 import Image from 'next/image';
 import { assets } from '@/assets/assets';
+import { motion } from 'framer-motion';
+
+const socialLinks = [
+  {
+    href: 'https://github.com/MrVirul',
+    icon: <FaGithub size={28} />,
+    label: 'GitHub',
+    gradient: 'from-gray-600 to-gray-800'
+  },
+  {
+    href: 'https://www.linkedin.com/in/meemana-virul-594459229/',
+    icon: <FaLinkedin size={28} />,
+    label: 'LinkedIn',
+    gradient: 'from-blue-600 to-blue-800'
+  },
+  {
+    href: 'https://x.com/SoulOfVirul',
+    icon: <FaXTwitter size={28} />,
+    label: 'Twitter',
+    gradient: 'from-sky-500 to-sky-700'
+  }
+];
+
+const footerLinks = [
+  { label: 'Home', href: '#top' },
+  { label: 'About', href: '#about' },
+  { label: 'Services', href: '#services' },
+  { label: 'Projects', href: '#work' },
+  { label: 'Contact', href: '#contact' }
+];
+
+const containerVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { staggerChildren: 0.1, duration: 0.8 }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6 }
+  }
+};
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -11,83 +59,176 @@ const Footer = () => {
       behavior: 'smooth',
     });
   };
-
+  
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0F172A] text-white font-Fira_Code border-t border-gray-800">
-      <div className="container mx-auto py-12 px-6 lg:px-20 flex flex-col items-center">
-        {/* Back to top button */}
-        <button
-          onClick={scrollToTop}
-          className="group bg-gradient-to-r from-[#22D3EE] to-[#0EA5E9] hover:from-[#FACC15] hover:to-[#F59E0B] text-[#0F172A] font-bold p-4 rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-[0_10px_30px_rgba(34,211,238,0.3)] mb-8"
-          aria-label="Back to top"
+    <footer className="relative bg-gradient-to-b from-background to-surface/20 text-text border-t border-white/10 overflow-hidden">
+      {/* Enhanced background effects */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-24 left-1/4 w-96 h-96 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-24 right-1/4 w-80 h-80 bg-gradient-to-r from-secondary/10 to-highlight/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+      </div>
+
+      <div className="relative z-10">
+        <motion.div 
+          className="container mx-auto py-16 px-6 lg:px-20"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
         >
-          <FaArrowUp className="h-6 w-6 transition-transform duration-300 group-hover:-translate-y-1" />
-        </button>
-
-        {/* Logo */}
-        <div className="mb-8 group">
-          <Image
-            src={assets.logo_dark}
-            alt="Dark Logo"
-            width={200}
-            height={50}
-            className="transition-transform duration-300 group-hover:scale-105"
-          />
-        </div>
-
-        {/* Professional tagline */}
-        <p className="text-center text-gray-300 mb-8 max-w-md leading-relaxed">
-          Crafting exceptional digital experiences with passion and precision.
-        </p>
-
-        {/* Social Media Links */}
-        <div className="flex space-x-6 mb-8">
-          <a 
-            href="https://github.com/MrVirul" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="group p-3 bg-[#1E293B] rounded-full text-gray-400 hover:text-white hover:bg-[#22D3EE] transition-all duration-300 transform hover:scale-110 hover:shadow-[0_5px_20px_rgba(34,211,238,0.4)]"
+          {/* Back to top button */}
+          <motion.div 
+            className="flex justify-center mb-12"
+            variants={itemVariants}
           >
-            <FaGithub size={24} className="transition-transform duration-300 group-hover:rotate-12" />
-          </a>
-          <a 
-            href="https://www.linkedin.com/in/meemana-virul-594459229/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="group p-3 bg-[#1E293B] rounded-full text-gray-400 hover:text-white hover:bg-[#22D3EE] transition-all duration-300 transform hover:scale-110 hover:shadow-[0_5px_20px_rgba(34,211,238,0.4)]"
+            <motion.button
+              onClick={scrollToTop}
+              className="group relative p-6 bg-gradient-to-r from-primary to-accent text-background font-bold rounded-full hover:shadow-neon transition-all duration-300 overflow-hidden"
+              whileHover={{ scale: 1.1, rotate: 360 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-accent to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
+              <FaArrowUp className="h-6 w-6 relative z-10 transition-transform duration-300 group-hover:-translate-y-1" />
+            </motion.button>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+            {/* Logo and tagline */}
+            <motion.div 
+              className="text-center md:text-left"
+              variants={itemVariants}
+            >
+              <div className="mb-6 group">
+                <Image
+                  src={assets.logo_dark}
+                  alt="MrVirul Logo"
+                  width={240}
+                  height={60}
+                  className="mx-auto md:mx-0 transition-all duration-300 group-hover:scale-105 filter drop-shadow-[0_0_20px_rgba(99,102,241,0.3)]"
+                />
+              </div>
+              <p className="text-muted mb-6 max-w-sm leading-relaxed font-sora text-lg">
+                Crafting exceptional digital experiences with passion, precision, and cutting-edge technology.
+              </p>
+              <div className="flex items-center justify-center md:justify-start gap-3 text-accent">
+                <FaCode className="w-5 h-5" />
+                <span className="font-medium font-inter">Full-Stack Developer</span>
+              </div>
+            </motion.div>
+
+            {/* Quick Links */}
+            <motion.div 
+              className="text-center"
+              variants={itemVariants}
+            >
+              <h3 className="text-xl font-bold text-white mb-6 font-inter">
+                Quick Links
+              </h3>
+              <ul className="space-y-3">
+                {footerLinks.map((link, index) => (
+                  <motion.li 
+                    key={link.href}
+                    variants={itemVariants}
+                  >
+                    <a
+                      href={link.href}
+                      className="text-muted hover:text-primary transition-colors duration-300 font-sora relative group"
+                    >
+                      {link.label}
+                      <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full group-hover:left-0 transition-all duration-300"></div>
+                    </a>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Contact info and social */}
+            <motion.div 
+              className="text-center md:text-right"
+              variants={itemVariants}
+            >
+              <h3 className="text-xl font-bold text-white mb-6 font-inter">
+                Let's Connect
+              </h3>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center justify-center md:justify-end gap-3 text-muted">
+                  <span className="font-sora">Available for freelance</span>
+                  <div className="w-3 h-3 bg-secondary rounded-full animate-pulse"></div>
+                </div>
+                <p className="text-muted font-sora">
+                  Ready for new opportunities
+                </p>
+              </div>
+
+              {/* Enhanced Social Media Links */}
+              <div className="flex justify-center md:justify-end gap-4">
+                {socialLinks.map((link, idx) => (
+                  <motion.a
+                    key={idx}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`relative p-4 bg-gradient-to-br ${link.gradient} rounded-2xl text-white hover:shadow-neon transition-all duration-300 overflow-hidden group`}
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                    <div className="relative z-10">
+                      {link.icon}
+                    </div>
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Enhanced Divider */}
+          <motion.div 
+            className="relative mb-8"
+            variants={itemVariants}
           >
-            <FaLinkedin size={24} className="transition-transform duration-300 group-hover:rotate-12" />
-          </a>
-          <a 
-            href="https://x.com/SoulOfVirul" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="group p-3 bg-[#1E293B] rounded-full text-gray-400 hover:text-white hover:bg-[#22D3EE] transition-all duration-300 transform hover:scale-110 hover:shadow-[0_5px_20px_rgba(34,211,238,0.4)]"
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+            </div>
+            <div className="relative flex justify-center">
+              <div className="px-6 py-2 bg-surface/50 backdrop-blur-sm rounded-full border border-white/10">
+                <div className="flex items-center gap-2 text-accent">
+                  <FaHeart className="w-4 h-4 animate-pulse" />
+                  <span className="text-sm font-medium font-sora">Made with passion</span>
+                  <FaCoffee className="w-4 h-4" />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Enhanced Copyright */}
+          <motion.div 
+            className="text-center space-y-4"
+            variants={itemVariants}
           >
-            <FaXTwitter size={24} className="transition-transform duration-300 group-hover:rotate-12" />
-          </a>
-        </div>
-
-        {/* Divider */}
-        <div className="w-full max-w-md h-px bg-gradient-to-r from-transparent via-[#22D3EE] to-transparent mb-8"></div>
-
-        {/* Copyright */}
-        <div className="text-center text-gray-400 text-sm space-y-2">
-          <p className="flex items-center justify-center gap-2">
-            &copy; {currentYear} MrVirul. All rights reserved.
-          </p>
-          <p className="flex items-center justify-center gap-2">
-            Designed & Built with <FaHeart className="text-[#22D3EE] w-4 h-4 animate-pulse" /> by MrVirul
-          </p>
-        </div>
-
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-4 -right-4 w-72 h-72 bg-[#22D3EE] rounded-full mix-blend-multiply filter blur-xl opacity-5 animate-blob"></div>
-          <div className="absolute -bottom-8 -left-4 w-72 h-72 bg-[#FACC15] rounded-full mix-blend-multiply filter blur-xl opacity-5 animate-blob animation-delay-2000"></div>
-        </div>
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-muted text-sm font-sora">
+              <p className="flex items-center gap-2">
+                &copy; {currentYear} MrVirul. All rights reserved.
+              </p>
+              <p className="flex items-center gap-2">
+                Designed & Built with{' '}
+                <motion.span
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 1, repeat: Infinity, repeatDelay: 2 }}
+                >
+                  <FaHeart className="text-accent w-4 h-4" />
+                </motion.span>{' '}
+                by MrVirul
+              </p>
+            </div>
+            
+            <div className="text-xs text-muted/60 font-sora">
+              Built with Next.js, React, Tailwind CSS & Framer Motion
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
     </footer>
   );

@@ -1,95 +1,204 @@
+import React, { useState, useEffect } from 'react';
+import { HiArrowRight, HiDownload, HiCode, HiLightningBolt, HiSparkles } from 'react-icons/hi';
+import { motion, AnimatePresence } from 'framer-motion';
+
 import { assets } from "@/assets/assets";
-import Image from "next/image";
-import React from "react";
-import { HiArrowLongRight, HiOutlineArrowDownTray } from "react-icons/hi2";
-import { PiHandWavingFill } from "react-icons/pi";
-import { FaCode, FaRocket, FaLightbulb } from "react-icons/fa";
+
 
 const Header = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.8, 
+        ease: "easeOut",
+        staggerChildren: 0.2 
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+
+  const floatingVariants = {
+    initial: { y: 0 },
+    animate: {
+      y: [-10, 10, -10],
+      transition: {
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
-    <div className="relative text-center py-32 px-4 bg-[#0F172A] text-white overflow-hidden">
-      {/* Animated background elements */}
+    <div className="relative min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 overflow-hidden pt-20">
+      {/* Animated Background Grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
+
+      {/* Interactive Cursor Light */}
+      <div
+        className="fixed w-96 h-96 pointer-events-none z-10 transition-all duration-300"
+        style={{
+          left: mousePosition.x - 192,
+          top: mousePosition.y - 192,
+          background: `radial-gradient(circle, rgba(6,182,212,0.15) 0%, rgba(6,182,212,0.05) 30%, transparent 70%)`,
+          filter: 'blur(1px)'
+        }}
+      />
+
+      {/* Floating Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#22D3EE] rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob"></div>
-        <div className="absolute top-40 right-10 w-96 h-96 bg-[#FACC15] rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-20 w-80 h-80 bg-[#22D3EE] rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-4000"></div>
+        <motion.div
+          variants={floatingVariants}
+          initial="initial"
+          animate="animate"
+          className="absolute top-20 left-20 w-2 h-2 bg-cyan-400 rounded-full opacity-60"
+        />
+        <motion.div
+          variants={floatingVariants}
+          initial="initial"
+          animate="animate"
+          style={{ animationDelay: '2s' }}
+          className="absolute top-40 right-32 w-1 h-1 bg-purple-400 rounded-full opacity-40"
+        />
+        <motion.div
+          variants={floatingVariants}
+          initial="initial"
+          animate="animate"
+          style={{ animationDelay: '4s' }}
+          className="absolute bottom-40 left-1/4 w-1.5 h-1.5 bg-emerald-400 rounded-full opacity-50"
+        />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10">
-        {/* Profile Image */}
-  <div className="mb-8 animate-fade-in-up">
-    <div className="relative group">
-        <Image
-          src={assets.profile_img}
-            alt="Virul Meemana - Frontend Developer"
-            className="rounded-full w-36 h-36 mx-auto object-cover border-4 border-[#22D3EE] shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:shadow-[0_0_30px_rgba(34,211,238,0.5)] profile-image-container"
-          />
-        <div className="absolute inset-0 rounded-full bg-gradient-to-t from-[#22D3EE]/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105"></div>
-    </div>
-</div>
+      {/* Main Content */}
+      <div className="relative z-20 flex items-center justify-center min-h-screen px-4">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={isVisible ? "visible" : "hidden"}
+          className="max-w-6xl mx-auto text-center"
+        >
+          {/* Profile Section */}
+          <motion.div variants={itemVariants} className="mb-8">
+            <div className="relative inline-block group">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+              <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white/20 backdrop-blur-xl">
+                {/* And replace the Image component with: */}
+                <img
+src={assets.profile_img}                  alt="Virul Meemana"
+                  className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div className="absolute -top-2 -right-2 w-8 h-8 bg-emerald-400 rounded-full flex items-center justify-center">
+                <div className="w-3 h-3 bg-emerald-600 rounded-full animate-pulse"></div>
+              </div>
+            </div>
+          </motion.div>
 
-        {/* Greeting */}
-        <h3 className="flex items-center justify-center gap-3 text-xl md:text-2xl mb-8 font-Fira_Code text-gray-300 animate-fade-in-up animation-delay-200">
-          Hi there! I'm Virul Meemana
-          <PiHandWavingFill className="w-7 h-7 text-[#FACC15] animate-wave" />
-        </h3>
+          {/* Greeting */}
+          <motion.div variants={itemVariants} className="mb-4">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-cyan-300 text-sm font-medium">
+              <HiSparkles className="w-4 h-4" />
+              Available for projects
+            </span>
+          </motion.div>
 
-        {/* Main Heading */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-Ovo mb-8 animate-fade-in-up animation-delay-400">
-          <span className="bg-gradient-to-r from-white via-[#22D3EE] to-white bg-clip-text text-transparent">
-            Frontend Developer
-          </span>
-          <br />
-          <span className="text-3xl sm:text-4xl lg:text-5xl text-[#22D3EE] font-Fira_Code">
-            & Digital Craftsman
-          </span>
-        </h1>
+          {/* Main Title */}
+          <motion.h1 variants={itemVariants} className="mb-6">
+            <div className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent">
+                Frontend
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                Developer
+              </span>
+            </div>
+            <div className="text-xl md:text-2xl text-slate-300 font-light">
+              & Digital Craftsman
+            </div>
+          </motion.h1>
 
-        {/* Description */}
-        <p className="max-w-3xl mx-auto font-Ovo text-gray-300 mb-12 leading-relaxed text-lg animate-fade-in-up animation-delay-600">
-          Transforming ideas into exceptional digital experiences through clean
-          code, innovative design, and cutting-edge technology. I specialize in
-          creating scalable web applications that drive business success.
-        </p>
+          {/* Description */}
+          <motion.p variants={itemVariants} className="max-w-2xl mx-auto text-lg text-slate-300 mb-8 leading-relaxed">
+            Crafting exceptional digital experiences through{' '}
+            <span className="text-cyan-300 font-medium">clean code</span>,{' '}
+            <span className="text-purple-300 font-medium">innovative design</span>, and{' '}
+            <span className="text-emerald-300 font-medium">cutting-edge technology</span>.
+          </motion.p>
 
-        {/* Feature highlights */}
-        <div className="flex flex-wrap items-center justify-center gap-8 mb-12 animate-fade-in-up animation-delay-800">
-          <div className="flex items-center gap-2 text-[#22D3EE] font-Fira_Code">
-            <FaCode className="w-5 h-5" />
-            <span>Clean Code</span>
-          </div>
-          <div className="flex items-center gap-2 text-[#22D3EE] font-Fira_Code">
-            <FaRocket className="w-5 h-5" />
-            <span>Fast Performance</span>
-          </div>
-          <div className="flex items-center gap-2 text-[#22D3EE] font-Fira_Code">
-            <FaLightbulb className="w-5 h-5" />
-            <span>Creative Solutions</span>
-          </div>
-        </div>
+          {/* Skills Tags */}
+          <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center gap-4 mb-12">
+            {[
+              { icon: HiCode, label: 'Clean Code', color: 'from-cyan-400 to-cyan-600' },
+              { icon: HiLightningBolt, label: 'Performance', color: 'from-purple-400 to-purple-600' },
+              { icon: HiSparkles, label: 'Innovation', color: 'from-emerald-400 to-emerald-600' }
+            ].map((skill, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 transition-all duration-300"
+              >
+                <skill.icon className={`w-4 h-4 bg-gradient-to-r ${skill.color} text-transparent`} />
+                <span className="text-sm font-medium text-white">{skill.label}</span>
+              </div>
+            ))}
+          </motion.div>
 
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12 animate-fade-in-up animation-delay-1000">
-          {/* Contact Button */}
-          <a
-            href="#contact"
-            className="group relative px-8 py-4 bg-gradient-to-r from-[#22D3EE] to-[#0EA5E9] text-[#0F172A] font-bold rounded-full flex items-center gap-3 hover:from-[#FACC15] hover:to-[#F59E0B] transition-all duration-300 transform hover:scale-105 hover:shadow-[0_10px_30px_rgba(34,211,238,0.3)] font-Fira_Code tracking-wider"
-          >
-            Let's Connect
-            <HiArrowLongRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
+          {/* Action Buttons */}
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <motion.button
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-[0_20px_40px_rgba(6,182,212,0.3)]"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative flex items-center gap-2">
+                Let's Connect
+                <HiArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+              </div>
+            </motion.button>
 
-          {/* Resume Button */}
-          <a
-            href="/sample-resume.pdf"
-            download
-            className="group px-8 py-4 border-2 border-[#22D3EE] text-[#22D3EE] rounded-full flex items-center gap-3 hover:bg-[#22D3EE] hover:text-[#0F172A] transition-all duration-300 transform hover:scale-105 hover:shadow-[0_10px_30px_rgba(34,211,238,0.3)] font-Fira_Code tracking-wider"
-          >
-            Download Resume
-            <HiOutlineArrowDownTray className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1" />
-          </a>
-        </div>
+            <motion.button
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="group px-8 py-4 bg-white/5 backdrop-blur-md border border-white/20 text-white font-semibold rounded-2xl hover:bg-white/10 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-[0_20px_40px_rgba(255,255,255,0.1)]"
+            >
+              <div className="flex items-center gap-2">
+                Download Resume
+                <HiDownload className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-1" />
+              </div>
+            </motion.button>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Bottom Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center"
+        >
+          <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+        </motion.div>
       </div>
     </div>
   );

@@ -1,79 +1,144 @@
 import { assets, serviceData } from "@/assets/assets";
 import React from "react";
-import {
-    FaCode,
-    FaMobile,
-    FaDesktop,
-    FaShoppingCart,
-    FaSearch,
-    FaRocket,
-    FaArrowRight,
-    FaCog,
-    FaPalette,
-    FaDatabase
-} from "react-icons/fa";
+import { FaCode, FaMobile, FaDesktop, FaShoppingCart, FaSearch, FaRocket, FaArrowRight, FaCog, FaPalette, FaDatabase } from "react-icons/fa";
+import { motion } from "framer-motion";
+
+const getServiceIcon = (title) => {
+    const iconMap = {
+        "Web Development": <FaCode className="w-8 h-8 text-cyan-400" />,
+        "Mobile Development": <FaMobile className="w-8 h-8 text-purple-400" />,
+        "UI/UX Design": <FaPalette className="w-8 h-8 text-emerald-400" />,
+        "E-commerce": <FaShoppingCart className="w-8 h-8 text-cyan-300" />,
+        "SEO Optimization": <FaSearch className="w-8 h-8 text-purple-300" />,
+        "Performance": <FaRocket className="w-8 h-8 text-emerald-300" />,
+        "Backend": <FaDatabase className="w-8 h-8 text-cyan-400" />,
+        "Consulting": <FaCog className="w-8 h-8 text-purple-400" />
+    };
+    return iconMap[title] || <FaDesktop className="w-8 h-8 text-cyan-400" />;
+};
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+    }
+};
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.9 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: { type: "spring", stiffness: 100, damping: 15 }
+    }
+};
 
 const Services = () => {
-    // Icon mapping for different service types
-    const getServiceIcon = (title) => {
-        const iconMap = {
-            "Web Development": <FaCode className="w-10 h-10 text-[#22D3EE]" />,
-            "Mobile Development": <FaMobile className="w-10 h-10 text-[#22D3EE]" />,
-            "UI/UX Design": <FaPalette className="w-10 h-10 text-[#22D3EE]" />,
-            "E-commerce": <FaShoppingCart className="w-10 h-10 text-[#22D3EE]" />,
-            "SEO Optimization": <FaSearch className="w-10 h-10 text-[#22D3EE]" />,
-            "Performance": <FaRocket className="w-10 h-10 text-[#22D3EE]" />,
-            "Backend": <FaDatabase className="w-10 h-10 text-[#22D3EE]" />,
-            "Consulting": <FaCog className="w-10 h-10 text-[#22D3EE]" />
-        };
-        return iconMap[title] || <FaDesktop className="w-10 h-10 text-[#22D3EE]" />;
-    };
-
     return (
-        <div id="services" className="w-full px-[12%] py-20 scroll-mt-20 bg-[#0F172A] text-white">
-            <div className="animate-fade-in-up">
-                <h4 className="text-center mb-2 text-lg font-Fira_Code text-[#22D3EE] tracking-wider">
-                    What I Offer
-                </h4>
-                <h2 className="text-center mb-2 text-5xl font-Fira_Code bg-gradient-to-r from-white to-[#22D3EE] bg-clip-text text-transparent">
-                    Professional Services
-                </h2>
+        <section id="services" className="relative w-full px-4 md:px-[8%] py-24 scroll-mt-20 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-slate-100 overflow-hidden">
+            {/* Animated Background Elements */}
+            <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl animate-float"></div>
+                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+                <div className="absolute top-3/4 left-1/2 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl animate-float" style={{animationDelay: '4s'}}></div>
             </div>
 
-            <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo text-gray-300 leading-relaxed text-lg">
-                Delivering cutting-edge digital solutions with modern technologies and best practices.
-                Transform your vision into powerful, scalable applications that drive business success.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 my-10">
-                {serviceData.map(({ icon, title, description, link }, index) => (
-                    <div
-                        key={index}
-                        className="border border-gray-600 rounded-xl p-6 cursor-pointer hover:bg-[#1E293B] hover:border-[#22D3EE] hover:-translate-y-2 duration-500 hover:shadow-[0_10px_30px_rgba(34,211,238,0.3)] transition-all group bg-[#0F172A]/50 backdrop-blur-sm"
+            <div className="relative z-10">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="text-center mb-16"
+                >
+                    <motion.h4
+                        className="text-lg font-sora text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 tracking-wider mb-4"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2, duration: 0.6 }}
                     >
-                        <div className="group-hover:scale-110 transition-transform duration-300 mb-4">
-                            {getServiceIcon(title)}
-                        </div>
+                        WHAT I OFFER
+                    </motion.h4>
+                    <motion.h2
+                        className="text-5xl lg:text-6xl font-inter font-bold bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent mb-6"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3, duration: 0.8 }}
+                    >
+                        Professional Services
+                    </motion.h2>
+                    <motion.p
+                        className="text-xl max-w-3xl mx-auto font-sora text-slate-300 leading-relaxed"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.4, duration: 0.6 }}
+                    >
+                        Delivering cutting-edge digital solutions with modern technologies and best practices. Transform your vision into powerful, scalable applications that drive business success.
+                    </motion.p>
+                </motion.div>
 
-                        <h3 className="my-4 font-semibold text-white group-hover:text-[#22D3EE] transition-colors duration-300 text-lg">
-                            {title}
-                        </h3>
-
-                        <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                            {description}
-                        </p>
-
-                        <a
-                            href={link}
-                            className="inline-flex items-center gap-2 text-sm text-[#22D3EE] hover:text-[#FACC15] font-medium transition-all duration-300 group-hover:gap-3"
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+                >
+                    {serviceData.map(({ icon, title, description, link }, index) => (
+                        <motion.div
+                            key={index}
+                            variants={cardVariants}
+                            className="group relative"
                         >
-                            Learn More
-                            <FaArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                        </a>
-                    </div>
-                ))}
+                            {/* Glass morphism card */}
+                            <div className="relative h-full p-8 rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-cyan-400/30 transition-all duration-700 hover:shadow-[0_20px_40px_rgba(6,182,212,0.15)] overflow-hidden">
+                                {/* Gradient border effect */}
+                                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-emerald-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+
+                                {/* Floating icon container */}
+                                <motion.div
+                                    className="relative mb-6 p-4 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 backdrop-blur-sm w-fit group-hover:scale-110 transition-transform duration-300"
+                                    whileHover={{ rotate: 5 }}
+                                >
+                                    {getServiceIcon(title)}
+                                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 animate-glow transition-opacity duration-300"></div>
+                                </motion.div>
+
+                                <h3 className="text-xl font-semibold text-white mb-4 font-inter group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-400 transition-all duration-300">
+                                    {title}
+                                </h3>
+
+                                <p className="text-slate-300 text-base leading-relaxed mb-8 font-sora">
+                                    {description}
+                                </p>
+
+                                {/* Enhanced CTA */}
+                                <motion.a
+                                    href={link}
+                                    className="inline-flex items-center gap-2 text-sm font-medium text-cyan-400 hover:text-purple-400 transition-all duration-300 group/link"
+                                    whileHover={{ x: 5 }}
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                  <span className="relative">
+                    Learn More
+                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 group-hover/link:w-full transition-all duration-300"></div>
+                  </span>
+                                    <FaArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1" />
+                                </motion.a>
+
+                                {/* Hover effect overlay */}
+                                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-400/5 to-purple-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </motion.div>
             </div>
-        </div>
+        </section>
     );
 };
 

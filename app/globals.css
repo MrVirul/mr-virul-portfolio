@@ -1,5 +1,31 @@
 @import "tailwindcss";
 
 * {
-  font-family: Outfit, sans-serif;
+  font-family: var(--font-inter), var(--font-sora), sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  background: #0F172A;
+  color: #F1F5F9;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0F172A;
+  color: #F1F5F9;
+  min-height: 100vh;
+  font-size: 1rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+a {
+  outline: none;
+  transition: color 0.2s, background 0.2s;
+}
+
+a:focus {
+  outline: 2px solid #06B6D4;
+  outline-offset: 2px;
 }

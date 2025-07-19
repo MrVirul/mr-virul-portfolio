@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ad89fdb-bd76-4f62-a759-ec2ac226bea9" name="Changes" comment="feat: add Services component and integrate it into the Home page">
+    <list default="true" id="5ad89fdb-bd76-4f62-a759-ec2ac226bea9" name="Changes" comment="feat: revamp UI for Footer, Navbar, and Work components with enhanced styling, animations, and responsiveness; integrate new assets">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/About.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Contact.jsx" afterDir="false" />
@@ -16,8 +16,12 @@
       <change beforePath="$PROJECT_DIR$/app/components/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Navbar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/Services.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Services.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/Work.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Work.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/assets.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/assets.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/git.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/git.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.mjs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +129,8 @@
       <workItem from="1752643583063" duration="654000" />
       <workItem from="1752646469207" duration="279000" />
       <workItem from="1752661331819" duration="740000" />
+      <workItem from="1752941829700" duration="5523000" />
+      <workItem from="1752950983670" duration="2251000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add About component; enhance layout, styling, and functionality across components">
       <option name="closed" value="true" />
