@@ -96,7 +96,7 @@ const Navbar = () => {
       >
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
         <Image
-          src={assets.logo}
+          src={assets.logo_dark}
           alt="Virul logo"
           className="w-28 cursor-pointer relative z-10 filter brightness-0 invert group-hover:drop-shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-300"
         />

@@ -1,12 +1,10 @@
-import user_image from "./user-image.png";
-import logo from "./logo.png";
 import logo_dark from "./logo_dark.png";
 
 export const assets = {
-  user_image,
-  logo,
+  user_image: "./user-image.png",
   logo_dark,
-  profile_img: "/profile-img.png" // Add this
+  profile_img: "./profile-img.png",
+  
 };
 
 export const workData = [
