@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import { assets } from '@/assets/assets';
 import { 
   HiCode, 
   HiAcademicCap, 
@@ -123,7 +124,7 @@ const About = () => {
               {/* Image Container */}
               <div className="relative overflow-hidden rounded-3xl bg-slate-800/50 backdrop-blur-md border border-white/10">
                 <img
-                  src="/api/placeholder/400/500"
+                  src={assets.profile_img}
                   alt="Virul Meemana"
                   className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />

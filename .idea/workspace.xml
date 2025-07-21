@@ -7,43 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ad89fdb-bd76-4f62-a759-ec2ac226bea9" name="Changes" comment="feat: enhance UI with new font integration, improved layout, and animations across components; update styles and dependencies">
+    <list default="true" id="5ad89fdb-bd76-4f62-a759-ec2ac226bea9" name="Changes" comment="{&#10;    &quot;error&quot;: {&#10;        &quot;message&quot;: &quot;You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY), or as the password field (with blank username) if you're accessing the API from your browser and are prompted for a username and password. You can obtain an API key from https://platform.openai.com/account/api-keys.&quot;,&#10;        &quot;type&quot;: &quot;invalid_request_error&quot;,&#10;        &quot;param&quot;: null,&#10;        &quot;code&quot;: null&#10;    }&#10;}">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/arrow-icon-dark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/arrow-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/assets.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/assets.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/close-black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/close-white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/code-icon-dark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/code-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/download-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/edu-icon-dark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/edu-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/figma.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/firebase.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/git.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/graphics-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/hand-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/header-bg-color.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/mail_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/mail_icon_dark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/menu-black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/menu-white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/mobile-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/mongodb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/moon_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/project-icon-dark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/project-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/react.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/right-arrow-bold-dark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/right-arrow-bold.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/right-arrow-dark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/right-arrow-white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/right-arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sun_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/ui-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/vscode.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/web-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/About.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Header.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +38,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -153,7 +120,9 @@
       <workItem from="1752661331819" duration="740000" />
       <workItem from="1752941829700" duration="5523000" />
       <workItem from="1752950983670" duration="2251000" />
-      <workItem from="1752954662345" duration="776000" />
+      <workItem from="1752954662345" duration="915000" />
+      <workItem from="1752956766868" duration="2181000" />
+      <workItem from="1753077161055" duration="55000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add About component; enhance layout, styling, and functionality across components">
       <option name="closed" value="true" />
@@ -219,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752954984047</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="{&#10;    &quot;error&quot;: {&#10;        &quot;message&quot;: &quot;You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY), or as the password field (with blank username) if you're accessing the API from your browser and are prompted for a username and password. You can obtain an API key from https://platform.openai.com/account/api-keys.&quot;,&#10;        &quot;type&quot;: &quot;invalid_request_error&quot;,&#10;        &quot;param&quot;: null,&#10;        &quot;code&quot;: null&#10;    }&#10;}">
+      <option name="closed" value="true" />
+      <created>1752955590958</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1752955590958</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +226,8 @@
     <MESSAGE value="chore: add Services component import in Home page" />
     <MESSAGE value="feat: add Services component and integrate it into the Home page" />
     <MESSAGE value="feat: enhance UI with new font integration, improved layout, and animations across components; update styles and dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: enhance UI with new font integration, improved layout, and animations across components; update styles and dependencies" />
+    <MESSAGE value="{&#13;&#10;    &quot;error&quot;: {&#13;&#10;        &quot;message&quot;: &quot;You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY), or as the password field (with blank username) if you're accessing the API from your browser and are prompted for a username and password. You can obtain an API key from https://platform.openai.com/account/api-keys.&quot;,&#13;&#10;        &quot;type&quot;: &quot;invalid_request_error&quot;,&#13;&#10;        &quot;param&quot;: null,&#13;&#10;        &quot;code&quot;: null&#13;&#10;    }&#13;&#10;}" />
+    <MESSAGE value="{&#10;    &quot;error&quot;: {&#10;        &quot;message&quot;: &quot;You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY), or as the password field (with blank username) if you're accessing the API from your browser and are prompted for a username and password. You can obtain an API key from https://platform.openai.com/account/api-keys.&quot;,&#10;        &quot;type&quot;: &quot;invalid_request_error&quot;,&#10;        &quot;param&quot;: null,&#10;        &quot;code&quot;: null&#10;    }&#10;}" />
+    <option name="LAST_COMMIT_MESSAGE" value="{&#10;    &quot;error&quot;: {&#10;        &quot;message&quot;: &quot;You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY), or as the password field (with blank username) if you're accessing the API from your browser and are prompted for a username and password. You can obtain an API key from https://platform.openai.com/account/api-keys.&quot;,&#10;        &quot;type&quot;: &quot;invalid_request_error&quot;,&#10;        &quot;param&quot;: null,&#10;        &quot;code&quot;: null&#10;    }&#10;}" />
   </component>
 </project>
