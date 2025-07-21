@@ -2,13 +2,11 @@ import user_image from "./user-image.png";
 import logo from "./logo.png";
 import logo_dark from "./logo_dark.png";
 
-export const profile_img = "/profile-img.png";
-
 export const assets = {
   user_image,
   logo,
   logo_dark,
-  
+  profile_img: "/profile-img.png" // Add this
 };
 
 export const workData = [
@@ -17,7 +15,7 @@ export const workData = [
     description: " Car Service Maintenance system",
     bgImage: "image.jpg",
     link: "https://github.com/mrbhanukab/CarCare",
-    techStack: ["Spring boots", "Java", "React", "Tailwind"], // Add this
+    techStack: ["Spring boots", "Java", "React", "Tailwind"], 
   },
    {
     title: "MrVirul Portfolio",

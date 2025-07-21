@@ -124,7 +124,7 @@ const About = () => {
               {/* Image Container */}
               <div className="relative overflow-hidden rounded-3xl bg-slate-800/50 backdrop-blur-md border border-white/10">
                 <img
-                  src={assets.profile_img}
+                  src={assets.user_image}
                   alt="Virul Meemana"
                   className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
