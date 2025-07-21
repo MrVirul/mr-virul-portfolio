@@ -14,7 +14,7 @@ const sora = Sora({
 });
 
 export const metadata = {
-    title: "MrVirul-Portfolio",
+    title: "MrVirul — Architected by Vibe Coder",
     description: "portfolio of MrVirul",
     icons: {
     icon: "/favicon.ico", // relative to /public
