@@ -141,15 +141,15 @@ const Header = () => {
           <motion.h1 variants={itemVariants} className="mb-6">
             <div className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4">
               <span className="bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent">
-                Solutions Architect{" "}
+                Vibe Coder{" "}
               </span>
               <br />
               <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                AI/ML
+                Mode On
               </span>
             </div>
             <div className="text-xl md:text-2xl text-slate-300 font-light">
-              Specialization
+             Learning. Building. Growing @ SLIIT
             </div>
           </motion.h1>
 
