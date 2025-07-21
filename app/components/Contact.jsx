@@ -1,4 +1,4 @@
-  import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { FaEnvelope, FaUser, FaPhone, FaEdit, FaPaperPlane, FaCheck, FaGithub, FaLinkedin, FaMapMarkerAlt, FaClock, FaInstagram, FaFacebook } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
@@ -100,10 +100,7 @@ const Contact = () => {
     }
     setIsSubmitting(true);
     setResult("Sending message...");
-    const jsonPayload = {
-      ...formData,
-      access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
-    };
+    
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -111,7 +108,10 @@ const Contact = () => {
           "Content-Type": "application/json",
           "Accept": "application/json"
         },
-        body: JSON.stringify(jsonPayload)
+        body: JSON.stringify({
+          ...formData,
+          access_key: "a57878ca-cc8f-4241-a1fc-0fd069f361e8" // Directly using the access key
+        })
       });
       const res = await response.json();
       if (res.success) {
@@ -129,14 +129,12 @@ const Contact = () => {
 
   return (
     <section id='contact' className='relative w-full px-4 md:px-[8%] py-24 scroll-mt-20 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950 text-slate-100 overflow-hidden'>
-      {/* Enhanced background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-emerald-500/10 to-cyan-400/10 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Enhanced header */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -176,7 +174,6 @@ const Contact = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Contact Info Sidebar */}
           <motion.div 
             className="lg:col-span-1"
             variants={containerVariants}
@@ -211,7 +208,6 @@ const Contact = () => {
               </div>
             </motion.div>
 
-            {/* Enhanced social links */}
             <motion.div 
               variants={itemVariants}
               className="p-8 rounded-3xl bg-white/5 backdrop-blur-md border border-white/10"
@@ -237,7 +233,6 @@ const Contact = () => {
             </motion.div>
           </motion.div>
 
-          {/* Enhanced Contact Form */}
           <motion.div 
             className="lg:col-span-2"
             variants={containerVariants}
