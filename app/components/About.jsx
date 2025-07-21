@@ -33,10 +33,10 @@ const About = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
   const stats = [
-    { icon: HiCode, title: 'Languages', value: '8+', description: 'Programming languages mastered' },
-    { icon: HiAcademicCap, title: 'Education', value: 'BSc IT', description: 'Computer Science background' },
-    { icon: HiCollection, title: 'Projects', value: '50+', description: 'Successful projects delivered' },
-    { icon: HiTrendingUp, title: 'Experience', value: '3+ Years', description: 'Professional development' }
+    { icon: HiCode, title: 'Languages', value: '4+', description: 'Programming languages mastered' },
+    { icon: HiAcademicCap, title: 'Education', value: 'BSc SE', description: 'Computer Science background' },
+    { icon: HiCollection, title: 'Projects', value: '4+', description: 'Successful projects delivered' },
+    { icon: HiTrendingUp, title: 'Experience', value: '1  + Years', description: 'Professional development' }
   ];
 
   const techStack = [
