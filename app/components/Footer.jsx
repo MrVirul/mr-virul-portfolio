@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaArrowUp, FaHeart, FaCode, FaCoffee } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaArrowUp, FaHeart, FaCode, FaCoffee, FaInstagram, FaFacebook } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
 import Image from 'next/image';
 import { assets } from '@/assets/assets';
@@ -13,7 +13,7 @@ const socialLinks = [
     gradient: 'from-gray-600 to-gray-800'
   },
   {
-    href: 'https://www.linkedin.com/in/meemana-virul-594459229/',
+    href: 'https://www.linkedin.com/in/virul-meemana-4597292a0/',
     icon: <FaLinkedin size={28} />,
     label: 'LinkedIn',
     gradient: 'from-blue-600 to-blue-800'
@@ -23,7 +23,20 @@ const socialLinks = [
     icon: <FaXTwitter size={28} />,
     label: 'Twitter',
     gradient: 'from-sky-500 to-sky-700'
-  }
+  },
+  {
+    href: 'https://www.instagram.com/virul_on_insta/',
+    icon: <FaInstagram size={28} />,
+    label: 'Instagram',
+    gradient: 'from-pink-500 to-orange-500'
+  },
+  {
+    href: 'https://www.facebook.com/virul.methdinu.meemana',
+    icon: <FaFacebook size={28} />,
+    label: 'Facebook',
+    gradient: 'from-blue-600 to-blue-400'
+  },
+ 
 ];
 
 const footerLinks = [

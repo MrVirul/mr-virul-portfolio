@@ -1,3 +1,4 @@
+
 import logo_dark from "./logo_dark.png";
 
 export const assets = {
@@ -20,7 +21,7 @@ export const workData = [
     description: "My portfolio website",
     bgImage: "image.jpg",
     link: "https://github.com/MrVirul/mr-virul-portfolio",
-    techStack: [ "Java Script", "React", "Tailwind"], // Add this
+    techStack: [ "Java Script", "React", "Tailwind"],
   },
   
 ];

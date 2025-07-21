@@ -1,5 +1,5 @@
   import React, { useState } from 'react';
-import { FaEnvelope, FaUser, FaPhone, FaEdit, FaPaperPlane, FaCheck, FaGithub, FaLinkedin, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { FaEnvelope, FaUser, FaPhone, FaEdit, FaPaperPlane, FaCheck, FaGithub, FaLinkedin, FaMapMarkerAlt, FaClock, FaInstagram, FaFacebook } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
 
@@ -28,7 +28,7 @@ const socialLinks = [
     color: 'from-slate-600 to-slate-800'
   },
   {
-    href: 'https://www.linkedin.com/in/meemana-virul-594459229/',
+    href: 'https://www.linkedin.com/in/virul-meemana-4597292a0/',
     icon: <FaLinkedin className="w-6 h-6" />, 
     label: 'LinkedIn',
     color: 'from-cyan-600 to-cyan-800'
@@ -38,7 +38,20 @@ const socialLinks = [
     icon: <FaXTwitter className="w-6 h-6" />, 
     label: 'Twitter',
     color: 'from-purple-500 to-purple-700'
-  }
+  },
+  {
+    href: 'https://www.instagram.com/virul_on_insta/',
+    icon: <FaInstagram className="w-6 h-6" />,
+    label: 'Instagram',
+    color: 'from-pink-500 to-orange-500'
+  },
+  {
+    href: 'https://www.facebook.com/virul.methdinu.meemana',
+    icon: <FaFacebook className="w-6 h-6" />,
+    label: 'Facebook',
+    color: 'from-blue-600 to-blue-400'
+  },
+ 
 ];
 
 const contactInfo = [

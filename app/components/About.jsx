@@ -256,6 +256,7 @@ const About = () => {
               <div className="text-slate-300 text-sm">Let's build something amazing together</div>
             </div>
             <motion.button
+              onClick={() => window.location.href = '#contact'}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all duration-300 border border-white/20 hover:border-white/30"
