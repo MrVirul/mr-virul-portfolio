@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import {
   HiArrowRight,
   HiCode,
@@ -6,9 +6,9 @@ import {
   HiLightningBolt,
   HiSparkles,
 } from "react-icons/hi";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
-import { assets } from '@/assets/assets';
+import { assets } from "@/assets/assets";
 
 const Header = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -20,7 +20,7 @@ const Header = () => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   const handleSmoothScroll = (e, targetId) => {
@@ -28,8 +28,8 @@ const Header = () => {
     const targetElement = document.querySelector(targetId);
     if (targetElement) {
       targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
+        behavior: "smooth",
+        block: "start",
       });
     }
   };
@@ -141,15 +141,15 @@ const Header = () => {
           <motion.h1 variants={itemVariants} className="mb-6">
             <div className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4">
               <span className="bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent">
-                Frontend
+                Solutions Architect{" "}
               </span>
               <br />
               <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                Developer
+                AI/ML
               </span>
             </div>
             <div className="text-xl md:text-2xl text-slate-300 font-light">
-              & Digital Craftsman
+              Specialization
             </div>
           </motion.h1>
 
@@ -158,7 +158,7 @@ const Header = () => {
             variants={itemVariants}
             className="max-w-2xl mx-auto text-lg text-slate-300 mb-8 leading-relaxed"
           >
-            Crafting exceptional digital experiences through{" "}
+            Engineering intelligent digital experiences through{" "}
             <span className="text-cyan-300 font-medium">clean code</span>,{" "}
             <span className="text-purple-300 font-medium">
               innovative design
@@ -213,7 +213,7 @@ const Header = () => {
           >
             <motion.a
               href="#contact"
-              onClick={(e) => handleSmoothScroll(e, '#contact')}
+              onClick={(e) => handleSmoothScroll(e, "#contact")}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-[0_20px_40px_rgba(6,182,212,0.3)]"
@@ -242,7 +242,7 @@ const Header = () => {
       </div>
 
       {/* Bottom Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
@@ -250,7 +250,7 @@ const Header = () => {
         >
           <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
         </motion.div>
-      </div>
+      </div> */}
     </div>
   );
 };
