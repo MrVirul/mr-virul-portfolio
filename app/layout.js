@@ -16,6 +16,9 @@ const sora = Sora({
 export const metadata = {
     title: "MrVirul-Portfolio",
     description: "portfolio of MrVirul",
+    icons: {
+    icon: "/favicon.ico", // relative to /public
+  },
 };
 
 export default function RootLayout({ children }) {

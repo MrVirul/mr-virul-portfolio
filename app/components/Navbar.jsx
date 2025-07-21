@@ -81,13 +81,13 @@ const Navbar = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className={`w-full fixed top-0 left-0 px-4 md:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 transition-all duration-700 ${
+        className={`w-full fixed top-0 left-0 px-4 md:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 transition-all duration-500 ${
           scrolled 
-            ? 'bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/50 shadow-[0_20px_40px_rgba(15,23,42,0.6)]' 
+            ? 'bg-background/80 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-black/20' 
             : 'bg-transparent backdrop-blur-sm border-b border-transparent'
         }`}
       >
-        {/* Logo with enhanced glow effect matching Work theme */}
+        {/* Logo with glow effect */}
         <motion.a 
           href="#top" 
           className="relative group"
@@ -95,22 +95,22 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
           <Image
             src={assets.logo_dark}
             alt="Virul logo"
             width={112}
             height={40}
-            className="w-28 cursor-pointer relative z-10 filter brightness-0 invert group-hover:drop-shadow-[0_0_20px_rgba(6,182,212,0.6)] transition-all duration-300"
+            className="w-28 cursor-pointer relative z-10 filter brightness-0 invert group-hover:drop-shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all duration-300"
           />
         </motion.a>
 
-        {/* Desktop Navigation with Work.jsx glass morphism style */}
+        {/* Desktop Navigation with floating effect */}
         <motion.ul 
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="hidden md:flex items-center gap-1 lg:gap-2 rounded-3xl px-8 py-3 bg-white/5 backdrop-blur-lg border border-white/10 shadow-2xl shadow-slate-950/20 hover:shadow-[0_20px_40px_rgba(6,182,212,0.1)] transition-all duration-700"
+          className="hidden md:flex items-center gap-1 lg:gap-2 rounded-2xl px-8 py-3 bg-white/5 backdrop-blur-lg border border-white/10 shadow-2xl shadow-black/10 hover:shadow-primary/10 transition-all duration-500"
         >
           {navLinks.map((link, index) => (
             <motion.li 
@@ -120,7 +120,7 @@ const Navbar = () => {
               transition={{ delay: 0.4 + index * 0.1, duration: 0.4 }}
             >
               <motion.a
-                className="relative font-inter text-slate-300 hover:text-white px-4 py-2 rounded-xl transition-all duration-300 group focus:outline-none overflow-hidden"
+                className="relative font-inter text-text/80 hover:text-white px-4 py-2 rounded-xl transition-all duration-300 group focus:outline-none overflow-hidden"
                 href={link.href}
                 tabIndex={0}
                 aria-label={link.label}
@@ -128,21 +128,21 @@ const Navbar = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {/* Animated background matching Work theme */}
+                {/* Animated background */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 rounded-xl"
+                  className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 rounded-xl"
                   layoutId="navHover"
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 />
                 
-                {/* Text with cyan glow effect */}
-                <span className="relative z-10 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-400 group-hover:drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]">
+                {/* Text with glow effect */}
+                <span className="relative z-10 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
                   {link.label}
                 </span>
                 
-                {/* Animated underline with gradient */}
+                {/* Animated underline */}
                 <motion.div
-                  className="absolute bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 opacity-0 group-hover:opacity-100"
+                  className="absolute bottom-1 left-4 right-4 h-0.5 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100"
                   initial={{ scaleX: 0 }}
                   whileHover={{ scaleX: 1 }}
                   transition={{ duration: 0.3 }}
@@ -152,10 +152,10 @@ const Navbar = () => {
           ))}
         </motion.ul>
 
-        {/* Enhanced CTA button matching Work.jsx gradient style */}
+        {/* Enhanced CTA button */}
         <motion.a
           href="#contact"
-          className="hidden lg:flex items-center gap-3 px-8 py-3 rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold shadow-[0_20px_40px_rgba(6,182,212,0.3)] hover:shadow-[0_20px_40px_rgba(6,182,212,0.4)] transition-all duration-300 transform hover:scale-105 ml-6 font-inter relative overflow-hidden group"
+          className="hidden lg:flex items-center gap-3 px-8 py-3 rounded-2xl bg-gradient-to-r from-primary to-accent text-white font-semibold shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-accent/40 transition-all duration-300 transform hover:scale-105 ml-6 font-inter relative overflow-hidden group"
           aria-label="Get in Touch"
           onClick={(e) => handleNavClick(e, '#contact')}
           whileHover={{ scale: 1.05 }}
@@ -176,9 +176,9 @@ const Navbar = () => {
           </motion.div>
         </motion.a>
 
-        {/* Modern mobile menu button with slate theme */}
+        {/* Modern mobile menu button */}
         <motion.button
-          className="block md:hidden ml-3 p-3 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 text-slate-100 hover:bg-cyan-500/20 hover:border-cyan-400/30 hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all duration-300 transform hover:scale-105 relative overflow-hidden group"
+          className="block md:hidden ml-3 p-3 rounded-2xl bg-white/5 backdrop-blur-lg border border-white/10 text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300 transform hover:scale-105 relative overflow-hidden group"
           onClick={() => setMenuOpen(true)}
           aria-label="Open menu"
           aria-expanded={menuOpen}
@@ -189,7 +189,7 @@ const Navbar = () => {
             animate={menuOpen ? { rotate: 90 } : { rotate: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <HiMenu className="w-6 h-6 group-hover:drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
+            <HiMenu className="w-6 h-6" />
           </motion.div>
         </motion.button>
       </motion.nav>
@@ -198,7 +198,7 @@ const Navbar = () => {
       <AnimatePresence mode="wait">
         {menuOpen && (
           <>
-            {/* Enhanced backdrop with slate colors */}
+            {/* Enhanced backdrop with blur matching slate theme */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -209,7 +209,7 @@ const Navbar = () => {
               aria-hidden="true"
             />
             
-            {/* Futuristic side menu with Work.jsx styling */}
+            {/* Futuristic side menu with slate gradient */}
             <motion.div
               initial={{ x: "100%", opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -220,29 +220,32 @@ const Navbar = () => {
                 damping: 30,
                 duration: 0.4 
               }}
-              className="fixed right-0 top-0 z-[70] w-80 max-w-[85vw] h-full bg-gradient-to-b from-slate-950/90 to-slate-900/90 backdrop-blur-2xl border-l border-white/10 shadow-[0_20px_40px_rgba(15,23,42,0.8)] overflow-y-auto"
+              className="fixed right-0 top-0 z-[70] w-80 max-w-[85vw] h-full bg-gradient-to-b from-slate-950 to-slate-900/95 backdrop-blur-2xl border-l border-cyan-400/20 shadow-2xl overflow-y-auto"
               role="dialog"
               aria-modal="true"
               aria-label="Navigation menu"
               ref={sideMenuRef}
             >
               <div className="flex flex-col h-full relative min-h-screen">
-                {/* Background effects matching Work.jsx */}
+                {/* Animated background pattern matching Work.jsx */}
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-purple-500/5"></div>
                 <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400"></div>
+                
+                {/* Floating background elements */}
+                <div className="absolute top-1/4 left-1/2 w-32 h-32 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
 
                 {/* Header with modern close button */}
-                <div className="flex justify-between items-center p-6 border-b border-slate-800/50 relative z-10 flex-shrink-0">
+                <div className="flex justify-between items-center p-6 border-b border-cyan-400/20 relative z-10 flex-shrink-0">
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="text-slate-400 font-sora text-sm uppercase tracking-widest"
+                    className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 font-sora text-sm uppercase tracking-widest font-medium"
                   >
                     Navigation
                   </motion.div>
                   <motion.button
-                    className="p-3 rounded-2xl bg-white/5 border border-white/10 text-slate-100 hover:bg-cyan-500/20 hover:border-cyan-400/30 hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all duration-300 transform hover:scale-105 group"
+                    className="p-3 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 text-slate-100 hover:bg-cyan-500/20 hover:border-cyan-400/40 hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all duration-300 transform hover:scale-105 group"
                     onClick={() => setMenuOpen(false)}
                     aria-label="Close menu"
                     whileHover={{ scale: 1.05 }}
@@ -251,11 +254,11 @@ const Navbar = () => {
                     animate={{ opacity: 1, rotate: 0 }}
                     transition={{ delay: 0.3 }}
                   >
-                    <HiX className="w-5 h-5 group-hover:drop-shadow-[0_0_8px_rgba(6,182,212,0.8)] transition-all duration-300" />
+                    <HiX className="w-5 h-5 group-hover:text-cyan-400 group-hover:drop-shadow-[0_0_8px_rgba(6,182,212,0.8)] transition-all duration-300" />
                   </motion.button>
                 </div>
 
-                {/* Navigation Links with Work.jsx style animations */}
+                {/* Navigation Links with stagger animation matching Work.jsx style */}
                 <nav className="flex-1 px-6 py-8 relative z-10 overflow-y-auto">
                   <ul className="space-y-2">
                     {navLinks.map((link, idx) => (
@@ -266,20 +269,20 @@ const Navbar = () => {
                         transition={{ delay: 0.4 + idx * 0.1, duration: 0.5 }}
                       >
                         <motion.a
-                          className="group relative font-inter text-slate-300 hover:text-white text-lg py-4 block rounded-xl px-4 transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
+                          className="group relative font-inter text-slate-300 hover:text-white text-lg py-4 block rounded-2xl px-6 transition-all duration-500 overflow-hidden focus:outline-none focus:ring-2 focus:ring-cyan-400/50 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-cyan-400/30 hover:shadow-[0_10px_20px_rgba(6,182,212,0.1)]"
                           href={link.href}
                           tabIndex={0}
                           aria-label={link.label}
                           onClick={(e) => handleNavClick(e, link.href)}
                           whileHover={{ x: 10 }}
                         >
-                          {/* Hover background with Work.jsx gradient */}
-                          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-xl"></div>
+                          {/* Hover background matching Work.jsx cards */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl"></div>
                           
-                          {/* Animated border with gradient */}
-                          <div className="absolute bottom-0 left-4 right-4 h-px bg-gradient-to-r from-cyan-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                          {/* Animated top border like Work.jsx */}
+                          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left rounded-t-2xl"></div>
                           
-                          <span className="relative z-10 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-400 group-hover:drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]">
+                          <span className="relative z-10 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-400 transition-all duration-500">
                             {link.label}
                           </span>
                         </motion.a>
@@ -287,9 +290,9 @@ const Navbar = () => {
                     ))}
                   </ul>
 
-                  {/* Enhanced mobile CTA matching Work.jsx style */}
+                  {/* Enhanced mobile CTA matching Work.jsx button style */}
                   <motion.div 
-                    className="mt-12 pt-8 border-t border-slate-800/50"
+                    className="mt-12 pt-8 border-t border-cyan-400/20"
                     initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.8, duration: 0.5 }}
@@ -297,7 +300,7 @@ const Navbar = () => {
                     <motion.a
                       href="#contact"
                       onClick={(e) => handleNavClick(e, '#contact')}
-                      className="group relative flex items-center justify-center gap-3 px-8 py-4 w-full rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold shadow-[0_20px_40px_rgba(6,182,212,0.3)] hover:shadow-[0_20px_40px_rgba(6,182,212,0.4)] transition-all duration-300 transform hover:scale-105 font-inter overflow-hidden focus:outline-none focus:ring-2 focus:ring-white/50"
+                      className="group relative flex items-center justify-center gap-3 px-8 py-4 w-full rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold shadow-lg shadow-cyan-500/30 hover:shadow-[0_20px_40px_rgba(6,182,212,0.3)] hover:scale-105 transition-all duration-300 transform font-inter overflow-hidden focus:outline-none focus:ring-2 focus:ring-white/50"
                       aria-label="Get in Touch"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
@@ -315,6 +318,9 @@ const Navbar = () => {
                     </motion.a>
                   </motion.div>
                 </nav>
+
+                {/* Decorative bottom gradient */}
+                <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
               </div>
             </motion.div>
           </>
