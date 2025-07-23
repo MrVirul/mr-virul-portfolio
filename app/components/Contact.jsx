@@ -206,32 +206,35 @@ const Contact = () => {
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
-
-            <motion.div 
-              variants={itemVariants}
-              className="p-8 rounded-3xl bg-white/5 backdrop-blur-md border border-white/10"
-            >
-              <h3 className="text-xl font-bold text-white mb-6 font-inter">
-                Follow Me
-              </h3>
-              <div className="flex gap-4">
-                {socialLinks.map((link, idx) => (
-                  <motion.a
-                    key={idx}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`p-4 rounded-2xl bg-gradient-to-br ${link.color} text-white hover:scale-110 hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all duration-300`}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    {link.icon}
-                  </motion.a>
-                ))}
-              </div>
-            </motion.div>
           </motion.div>
+          </motion.div>
+          
+                    <motion.div 
+  variants={itemVariants}
+  className="p-6 md:p-8 rounded-2xl md:rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 w-full max-w-md mx-auto"
+>
+  <h3 className="text-lg md:text-xl font-bold text-white mb-4 md:mb-6 font-inter">
+    Follow Me
+  </h3>
+  <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+    {socialLinks.map((link, idx) => (
+      <motion.a
+        key={idx}
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`p-3 md:p-4 rounded-xl md:rounded-2xl bg-gradient-to-br ${link.color} text-white hover:scale-110 hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all duration-300`}
+        whileHover={{ scale: 1.1, rotate: 5 }}
+        whileTap={{ scale: 0.9 }}
+        aria-label={link.name || "Social link"}
+      >
+        <span className="text-lg md:text-xl">
+          {link.icon}
+        </span>
+      </motion.a>
+    ))}
+  </div>
+</motion.div>
 
           <motion.div 
             className="lg:col-span-2"
