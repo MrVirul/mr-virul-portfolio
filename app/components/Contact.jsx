@@ -190,7 +190,7 @@ const Contact = () => {
               </h3>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
-                  <motion.div 
+                  < motion.div 
                     key={index}
                     className="flex items-start gap-4"
                     variants={itemVariants}
