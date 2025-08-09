@@ -7,9 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ad89fdb-bd76-4f62-a759-ec2ac226bea9" name="Changes" comment="feat: enhance Contact component with improved validation and UI updates">
+    <list default="true" id="5ad89fdb-bd76-4f62-a759-ec2ac226bea9" name="Changes" comment="feat: update workspace.xml to enhance Contact component with improved validation and UI updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Header.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +125,7 @@
       <workItem from="1753807062474" duration="16000" />
       <workItem from="1754156172659" duration="74000" />
       <workItem from="1754236773003" duration="278000" />
-      <workItem from="1754770183772" duration="1339000" />
+      <workItem from="1754770183772" duration="1545000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add About component; enhance layout, styling, and functionality across components">
       <option name="closed" value="true" />
@@ -208,7 +207,23 @@
       <option name="project" value="LOCAL" />
       <updated>1754771449502</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: refactor Header component for improved layout and animations">
+      <option name="closed" value="true" />
+      <created>1754771922470</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1754771922470</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: update workspace.xml to enhance Contact component with improved validation and UI updates">
+      <option name="closed" value="true" />
+      <created>1754771930914</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1754771930914</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,9 +253,11 @@
     <MESSAGE value="chore: add Services component import in Home page" />
     <MESSAGE value="feat: add Services component and integrate it into the Home page" />
     <MESSAGE value="feat: enhance UI with new font integration, improved layout, and animations across components; update styles and dependencies" />
-    <MESSAGE value="{&#13;&#10;    &quot;error&quot;: {&#13;&#10;        &quot;message&quot;: &quot;You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY), or as the password field (with blank username) if you're accessing the API from your browser and are prompted for a username and password. You can obtain an API key from https://platform.openai.com/account/api-keys.&quot;,&#13;&#10;        &quot;type&quot;: &quot;invalid_request_error&quot;,&#13;&#10;        &quot;param&quot;: null,&#13;&#10;        &quot;code&quot;: null&#13;&#10;    }&#13;&#10;}" />
     <MESSAGE value="{&#10;    &quot;error&quot;: {&#10;        &quot;message&quot;: &quot;You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY), or as the password field (with blank username) if you're accessing the API from your browser and are prompted for a username and password. You can obtain an API key from https://platform.openai.com/account/api-keys.&quot;,&#10;        &quot;type&quot;: &quot;invalid_request_error&quot;,&#10;        &quot;param&quot;: null,&#10;        &quot;code&quot;: null&#10;    }&#10;}" />
     <MESSAGE value="feat: enhance Contact component with improved validation and UI updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: enhance Contact component with improved validation and UI updates" />
+    <MESSAGE value="{&#13;&#10;    &quot;error&quot;: {&#13;&#10;        &quot;message&quot;: &quot;You didn't provide an API key. You need to provide your API key in an Authorization header using Bearer auth (i.e. Authorization: Bearer YOUR_KEY), or as the password field (with blank username) if you're accessing the API from your browser and are prompted for a username and password. You can obtain an API key from https://platform.openai.com/account/api-keys.&quot;,&#13;&#10;        &quot;type&quot;: &quot;invalid_request_error&quot;,&#13;&#10;        &quot;param&quot;: null,&#13;&#10;        &quot;code&quot;: null&#13;&#10;    }&#13;&#10;}" />
+    <MESSAGE value="feat: refactor Header component for improved layout and animations" />
+    <MESSAGE value="feat: update workspace.xml to enhance Contact component with improved validation and UI updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update workspace.xml to enhance Contact component with improved validation and UI updates" />
   </component>
 </project>
