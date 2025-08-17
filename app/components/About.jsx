@@ -14,8 +14,9 @@ import {
   SiNextdotjs, 
   SiTypescript, 
   SiTailwindcss,
-  SiNodedotjs,
-  SiMongodb,
+  // SiNodedotjs,
+  // SiMongodb,
+    SiSpringboot,
   SiJavascript,
   SiHtml5,
   SiCss3
@@ -44,8 +45,9 @@ const About = () => {
     { name: 'Next.js', icon: SiNextdotjs, color: 'text-white', bg: 'bg-slate-600/10' },
     { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-400', bg: 'bg-blue-400/10' },
     { name: 'Tailwind', icon: SiTailwindcss, color: 'text-cyan-300', bg: 'bg-cyan-300/10' },
-    { name: 'Node.js', icon: SiNodedotjs, color: 'text-green-400', bg: 'bg-green-400/10' },
-    { name: 'MongoDB', icon: SiMongodb, color: 'text-emerald-400', bg: 'bg-emerald-400/10' },
+    {name: 'Spring Boot', icon: SiSpringboot, color: 'text-green-500', bg: 'bg-green-500/10' },
+    // { name: 'Node.js', icon: SiNodedotjs, color: 'text-green-400', bg: 'bg-green-400/10' },
+    // { name: 'MongoDB', icon: SiMongodb, color: 'text-emerald-400', bg: 'bg-emerald-400/10' },
     { name: 'JavaScript', icon: SiJavascript, color: 'text-yellow-400', bg: 'bg-yellow-400/10' },
     { name: 'HTML5', icon: SiHtml5, color: 'text-orange-400', bg: 'bg-orange-400/10' },
     { name: 'CSS3', icon: SiCss3, color: 'text-blue-300', bg: 'bg-blue-300/10' }

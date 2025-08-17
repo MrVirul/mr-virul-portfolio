@@ -5,7 +5,7 @@ import { HiMail, HiMenu, HiX } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { href: "#top", label: "Home" },
+  // { href: "#top", label: "Home" },
   { href: "#about", label: "About me" },
   { href: "#services", label: "Services" },
   { href: "#work", label: "My work" },

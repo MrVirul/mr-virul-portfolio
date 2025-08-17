@@ -9,6 +9,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5ad89fdb-bd76-4f62-a759-ec2ac226bea9" name="Changes" comment="feat: update workspace.xml to enhance Contact component with improved validation and UI updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/About.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Contact.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/assets.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/assets.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +90,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-WS-251.26927.40" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-WS-251.27812.50" />
       </set>
     </attachedChunks>
   </component>
@@ -125,7 +128,10 @@
       <workItem from="1753807062474" duration="16000" />
       <workItem from="1754156172659" duration="74000" />
       <workItem from="1754236773003" duration="278000" />
-      <workItem from="1754770183772" duration="1545000" />
+      <workItem from="1754770183772" duration="1598000" />
+      <workItem from="1754772148801" duration="12000" />
+      <workItem from="1754772190727" duration="145000" />
+      <workItem from="1755413084034" duration="3960000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add About component; enhance layout, styling, and functionality across components">
       <option name="closed" value="true" />
@@ -223,7 +229,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754771930914</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat: update workspace.xml to enhance Contact component with improved validation and UI updates">
+      <option name="closed" value="true" />
+      <created>1754772013439</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1754772013439</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

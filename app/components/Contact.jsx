@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { FaEnvelope, FaUser, FaPhone, FaEdit, FaPaperPlane, FaCheck, FaGithub, FaLinkedin, FaMapMarkerAlt, FaClock, FaInstagram, FaFacebook, FaExclamationCircle } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
@@ -123,7 +124,7 @@ const Contact = () => {
     };
 
     return (
-        <section className='relative w-full px-4 md:px-8 lg:px-16 xl:px-24 py-16 md:py-24 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950 text-slate-100 overflow-hidden min-h-screen'>
+        <section id="contact" className='relative w-full px-4 md:px-8 lg:px-16 xl:px-24 py-16 md:py-24 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950 text-slate-100 overflow-hidden min-h-screen'>
             {/* Background Effects */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-gradient-to-r from-cyan-500/5 to-purple-500/5 rounded-full blur-3xl"></div>
