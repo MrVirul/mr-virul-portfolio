@@ -1,22 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { assets } from '@/assets/assets';
-import { 
-  HiCode, 
-  HiAcademicCap, 
-  HiCollection, 
+import {
+  HiCode,
+  HiAcademicCap,
+  HiCollection,
   HiLightningBolt,
   HiSparkles,
-  HiTrendingUp 
+  HiTrendingUp
 } from 'react-icons/hi';
-import { 
-  SiReact, 
-  SiNextdotjs, 
-  SiTypescript, 
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
   SiTailwindcss,
   // SiNodedotjs,
   // SiMongodb,
-    SiSpringboot,
+  SiSpringboot,
   SiJavascript,
   SiHtml5,
   SiCss3
@@ -122,7 +122,7 @@ const About = () => {
             <div className="relative group">
               {/* Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-purple-500/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-              
+
               {/* Image Container */}
               <div className="relative overflow-hidden rounded-3xl bg-slate-800/50 backdrop-blur-md border border-white/10">
                 <img
@@ -130,10 +130,10 @@ const About = () => {
                   alt="Virul Meemana"
                   className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                
+
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
-                
+
                 {/* Floating Tech Icons */}
                 <div className="absolute top-6 right-6">
                   <motion.div
@@ -161,12 +161,12 @@ const About = () => {
                 Crafting Digital Experiences
               </h3>
               <p className="text-slate-300 text-lg leading-relaxed">
-                I'm a passionate frontend developer who believes in the power of clean code and 
-                exceptional user experiences. With a deep understanding of modern web technologies 
+                I'm a passionate frontend developer who believes in the power of clean code and
+                exceptional user experiences. With a deep understanding of modern web technologies
                 and a keen eye for design, I transform complex ideas into intuitive digital solutions.
               </p>
               <p className="text-slate-300 leading-relaxed">
-                My journey in web development started with curiosity and has evolved into a commitment 
+                My journey in web development started with curiosity and has evolved into a commitment
                 to creating scalable, accessible, and performant applications that make a real impact.
               </p>
             </motion.div>
@@ -201,10 +201,10 @@ const About = () => {
 
         {/* Tech Stack Section */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-20"
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-20"
         >
           <div className="text-center mb-12">
             <h3 className="text-2xl font-bold text-white mb-4">Technology Stack</h3>
@@ -212,32 +212,32 @@ const About = () => {
           </div>
 
           {/* Tech Grid */}
-          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-9 gap-4">
+          <div className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
             {techStack.map((tech, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                whileHover={{ 
-                  scale: 1.1, 
-                  y: -5,
-                  transition: { type: "spring", stiffness: 400, damping: 10 }
-                }}
-                className="group relative"
-              >
-                <div className={`p-4 rounded-2xl ${tech.bg} backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col items-center justify-center aspect-square`}>
-                  <tech.icon className={`w-8 h-8 ${tech.color} group-hover:scale-110 transition-transform duration-300`} />
-                  <span className="text-xs text-white/70 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+                    whileHover={{
+                      scale: 1.1,
+                      y: -5,
+                      transition: { type: "spring", stiffness: 400, damping: 10 }
+                    }}
+                    className="group relative"
+                >
+                  <div className={`p-4 rounded-2xl ${tech.bg} backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col items-center justify-center aspect-square w-20 h-20`}>
+                    <tech.icon className={`w-8 h-8 ${tech.color} group-hover:scale-110 transition-transform duration-300`} />
+                    <span className="text-xs text-white/70 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {tech.name}
+          </span>
+                  </div>
+
+                  {/* Tooltip */}
+                  <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-slate-800 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
                     {tech.name}
-                  </span>
-                </div>
-                
-                {/* Tooltip */}
-                <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-slate-800 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
-                  {tech.name}
-                </div>
-              </motion.div>
+                  </div>
+                </motion.div>
             ))}
           </div>
         </motion.div>

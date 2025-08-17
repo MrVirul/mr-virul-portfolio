@@ -56,7 +56,7 @@ const Header = () => {
                         className="mt-4 text-5xl md:text-7xl font-bold leading-tight"
                     >
             <span className="bg-gradient-to-r from-white via-cyan-200 to-white bg-clip-text text-transparent">
-              Frontend
+              Undergraduate
             </span>{" "}
                         <br />
                         <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-400 bg-clip-text text-transparent animate-gradient-x">
