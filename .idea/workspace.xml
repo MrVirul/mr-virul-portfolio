@@ -7,11 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ad89fdb-bd76-4f62-a759-ec2ac226bea9" name="Changes" comment="feat: update About, Contact, and Navbar components; add Spring Boot icon and clean up commented code">
+    <list default="true" id="5ad89fdb-bd76-4f62-a759-ec2ac226bea9" name="Changes" comment="feat: enhance About, Header, and Services components; add Machine Learning service and improve layout and styling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/About.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Services.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Services.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +128,9 @@
       <workItem from="1754770183772" duration="1598000" />
       <workItem from="1754772148801" duration="12000" />
       <workItem from="1754772190727" duration="145000" />
-      <workItem from="1755413084034" duration="7233000" />
+      <workItem from="1755413084034" duration="7724000" />
+      <workItem from="1755506824819" duration="19000" />
+      <workItem from="1755784231225" duration="1056000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add About component; enhance layout, styling, and functionality across components">
       <option name="closed" value="true" />
@@ -245,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755432936534</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="feat: enhance About, Header, and Services components; add Machine Learning service and improve layout and styling">
+      <option name="closed" value="true" />
+      <created>1755436834113</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1755436834113</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,6 +288,7 @@
     <MESSAGE value="feat: refactor Header component for improved layout and animations" />
     <MESSAGE value="feat: update workspace.xml to enhance Contact component with improved validation and UI updates" />
     <MESSAGE value="feat: update About, Contact, and Navbar components; add Spring Boot icon and clean up commented code" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update About, Contact, and Navbar components; add Spring Boot icon and clean up commented code" />
+    <MESSAGE value="feat: enhance About, Header, and Services components; add Machine Learning service and improve layout and styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: enhance About, Header, and Services components; add Machine Learning service and improve layout and styling" />
   </component>
 </project>

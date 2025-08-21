@@ -1,6 +1,19 @@
-
 import React, { useState } from 'react';
-import { FaEnvelope, FaUser, FaPhone, FaEdit, FaPaperPlane, FaCheck, FaGithub, FaLinkedin, FaMapMarkerAlt, FaClock, FaInstagram, FaFacebook, FaExclamationCircle } from 'react-icons/fa';
+import {
+    FaEnvelope,
+    FaUser,
+    FaPhone,
+    FaEdit,
+    FaPaperPlane,
+    FaCheck,
+    FaGithub,
+    FaLinkedin,
+    FaMapMarkerAlt,
+    FaClock,
+    FaInstagram,
+    FaFacebook,
+    FaExclamationCircle,
+} from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 
 const socialLinks = [
@@ -8,58 +21,58 @@ const socialLinks = [
         href: 'https://github.com/MrVirul',
         icon: <FaGithub className="w-5 h-5" />,
         label: 'GitHub',
-        color: 'from-slate-600 to-slate-800'
+        color: 'from-slate-600 to-slate-800',
     },
     {
         href: 'https://www.linkedin.com/in/virul-meemana-4597292a0/',
         icon: <FaLinkedin className="w-5 h-5" />,
         label: 'LinkedIn',
-        color: 'from-blue-600 to-blue-800'
+        color: 'from-blue-600 to-blue-800',
     },
     {
         href: 'https://x.com/SoulOfVirul',
         icon: <FaXTwitter className="w-5 h-5" />,
         label: 'Twitter',
-        color: 'from-gray-700 to-black'
+        color: 'from-gray-700 to-black',
     },
     {
         href: 'https://www.instagram.com/virul_on_insta/',
         icon: <FaInstagram className="w-5 h-5" />,
         label: 'Instagram',
-        color: 'from-pink-500 to-orange-500'
+        color: 'from-pink-500 to-orange-500',
     },
     {
         href: 'https://www.facebook.com/virul.methdinu.meemana',
         icon: <FaFacebook className="w-5 h-5" />,
         label: 'Facebook',
-        color: 'from-blue-600 to-blue-800'
+        color: 'from-blue-600 to-blue-800',
     },
 ];
 
 const contactInfo = [
     {
         icon: <FaMapMarkerAlt className="w-5 h-5" />,
-        title: "Location",
-        detail: "Available Worldwide",
-        subtitle: "Remote & On-site"
+        title: 'Location',
+        detail: 'Available Worldwide',
+        subtitle: 'Remote & On-site',
     },
     {
         icon: <FaClock className="w-5 h-5" />,
-        title: "Response Time",
-        detail: "Within 24 hours",
-        subtitle: "Usually much faster"
-    }
+        title: 'Response Time',
+        detail: 'Within 24 hours',
+        subtitle: 'Usually much faster',
+    },
 ];
 
 const Contact = () => {
     const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: ""
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
     });
-    const [result, setResult] = useState("");
+    const [result, setResult] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [errors, setErrors] = useState({});
 
@@ -90,7 +103,6 @@ const Contact = () => {
         const { name, value } = event.target;
         setFormData({ ...formData, [name]: value });
 
-        // Clear error when user starts typing
         if (errors[name]) {
             setErrors({ ...errors, [name]: '' });
         }
@@ -100,31 +112,55 @@ const Contact = () => {
         event.preventDefault();
 
         if (!validate()) {
-            setResult("");
+            setResult('');
             return;
         }
 
         setIsSubmitting(true);
-        setResult("Sending message...");
+        setResult('Sending message...');
 
         try {
-            // Simulate API call (replace with actual API)
-            await new Promise(resolve => setTimeout(resolve, 2000));
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+                body: JSON.stringify({
+                    access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    subject: formData.subject,
+                    message: formData.message,
 
-            // Mock success response
-            setResult("Message sent successfully! I'll get back to you soon.");
-            setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-            setErrors({});
+                    // ✅ hidden meta fields
+                    from_name: 'Portfolio Contact Form',
+                    redirect: 'https://yourwebsite.com/thank-you',
+                }),
+            });
 
+            const data = await response.json();
+
+            if (data.success) {
+                setResult("Message sent successfully! I'll get back to you soon.");
+                setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+                setErrors({});
+            } else {
+                setResult('Failed to send message. Please try again or contact me directly.');
+            }
         } catch (error) {
-            setResult("Failed to send message. Please try again or contact me directly.");
+            setResult('Failed to send message. Please try again or contact me directly.');
         } finally {
             setIsSubmitting(false);
         }
     };
 
     return (
-        <section id="contact" className='relative w-full px-4 md:px-8 lg:px-16 xl:px-24 py-16 md:py-24 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950 text-slate-100 overflow-hidden min-h-screen'>
+        <section
+            id="contact"
+            className="relative w-full px-4 md:px-8 lg:px-16 xl:px-24 py-16 md:py-24 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950 text-slate-100 overflow-hidden min-h-screen"
+        >
             {/* Background Effects */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-gradient-to-r from-cyan-500/5 to-purple-500/5 rounded-full blur-3xl"></div>
@@ -141,7 +177,8 @@ const Contact = () => {
                         Let's Work Together
                     </h2>
                     <p className="text-base md:text-lg max-w-2xl mx-auto text-slate-300 leading-relaxed">
-                        Ready to bring your vision to life? I'm available for freelance projects and full-time opportunities.
+                        Ready to bring your vision to life? I'm available for freelance projects and full-time
+                        opportunities.
                     </p>
                 </div>
 
@@ -150,9 +187,7 @@ const Contact = () => {
                     <div className="lg:col-span-4 space-y-6">
                         {/* Contact Information */}
                         <div className="p-6 md:p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-                            <h3 className="text-xl font-semibold text-white mb-6">
-                                Contact Information
-                            </h3>
+                            <h3 className="text-xl font-semibold text-white mb-6">Contact Information</h3>
                             <div className="space-y-6">
                                 {contactInfo.map((info, index) => (
                                     <div key={index} className="flex items-start gap-4">
@@ -171,9 +206,7 @@ const Contact = () => {
 
                         {/* Social Links */}
                         <div className="p-6 md:p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-                            <h3 className="text-xl font-semibold text-white mb-6">
-                                Follow Me
-                            </h3>
+                            <h3 className="text-xl font-semibold text-white mb-6">Follow Me</h3>
                             <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-3 xl:grid-cols-5 gap-3">
                                 {socialLinks.map((link, idx) => (
                                     <a
@@ -196,161 +229,163 @@ const Contact = () => {
                         <div className="p-6 md:p-8 lg:p-10 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
                             <h3 className="text-2xl font-semibold text-white mb-8">Send Me a Message</h3>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                                {/* Name Field */}
-                                <div className="space-y-2">
-                                    <label className="block text-sm font-medium text-slate-300">
-                                        Full Name *
-                                    </label>
-                                    <div className="relative">
-                                        <FaUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-cyan-400 text-sm" />
-                                        <input
-                                            type="text"
-                                            name="name"
-                                            placeholder="Enter your full name"
-                                            value={formData.name}
-                                            onChange={handleChange}
-                                            className={`w-full pl-12 pr-4 py-3 bg-slate-800/50 border rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-slate-100 placeholder-slate-400 transition-all duration-300 ${
-                                                errors.name ? 'border-red-400 focus:ring-red-400' : 'border-white/10 hover:border-cyan-400/50'
-                                            }`}
-                                        />
+                            <form onSubmit={onSubmit}>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                    {/* Name Field */}
+                                    <div className="space-y-2">
+                                        <label className="block text-sm font-medium text-slate-300">Full Name *</label>
+                                        <div className="relative">
+                                            <FaUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-cyan-400 text-sm" />
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                placeholder="Enter your full name"
+                                                value={formData.name}
+                                                onChange={handleChange}
+                                                className={`w-full pl-12 pr-4 py-3 bg-slate-800/50 border rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-slate-100 placeholder-slate-400 transition-all duration-300 ${
+                                                    errors.name
+                                                        ? 'border-red-400 focus:ring-red-400'
+                                                        : 'border-white/10 hover:border-cyan-400/50'
+                                                }`}
+                                            />
+                                        </div>
+                                        {errors.name && (
+                                            <p className="text-red-400 text-sm flex items-center gap-1">
+                                                <FaExclamationCircle className="w-3 h-3" />
+                                                {errors.name}
+                                            </p>
+                                        )}
                                     </div>
-                                    {errors.name && (
+
+                                    {/* Email Field */}
+                                    <div className="space-y-2">
+                                        <label className="block text-sm font-medium text-slate-300">Email Address *</label>
+                                        <div className="relative">
+                                            <FaEnvelope className="absolute left-4 top-1/2 transform -translate-y-1/2 text-cyan-400 text-sm" />
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                placeholder="Enter your email"
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                className={`w-full pl-12 pr-4 py-3 bg-slate-800/50 border rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-slate-100 placeholder-slate-400 transition-all duration-300 ${
+                                                    errors.email
+                                                        ? 'border-red-400 focus:ring-red-400'
+                                                        : 'border-white/10 hover:border-cyan-400/50'
+                                                }`}
+                                            />
+                                        </div>
+                                        {errors.email && (
+                                            <p className="text-red-400 text-sm flex items-center gap-1">
+                                                <FaExclamationCircle className="w-3 h-3" />
+                                                {errors.email}
+                                            </p>
+                                        )}
+                                    </div>
+
+                                    {/* Phone Field */}
+                                    <div className="space-y-2">
+                                        <label className="block text-sm font-medium text-slate-300">Phone Number</label>
+                                        <div className="relative">
+                                            <FaPhone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-cyan-400 text-sm" />
+                                            <input
+                                                type="tel"
+                                                name="phone"
+                                                placeholder="Enter your phone number"
+                                                value={formData.phone}
+                                                onChange={handleChange}
+                                                className="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-slate-100 placeholder-slate-400 transition-all duration-300 hover:border-cyan-400/50"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Subject Field */}
+                                    <div className="space-y-2">
+                                        <label className="block text-sm font-medium text-slate-300">Subject</label>
+                                        <div className="relative">
+                                            <FaEdit className="absolute left-4 top-1/2 transform -translate-y-1/2 text-cyan-400 text-sm" />
+                                            <input
+                                                type="text"
+                                                name="subject"
+                                                placeholder="What's this about?"
+                                                value={formData.subject}
+                                                onChange={handleChange}
+                                                className="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-slate-100 placeholder-slate-400 transition-all duration-300 hover:border-cyan-400/50"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Message Field */}
+                                <div className="space-y-2 mb-8">
+                                    <label className="block text-sm font-medium text-slate-300">Message *</label>
+                                    <textarea
+                                        name="message"
+                                        placeholder="Tell me about your project or how I can help you..."
+                                        rows="5"
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                        maxLength="500"
+                                        className={`w-full p-4 bg-slate-800/50 border rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-slate-100 placeholder-slate-400 transition-all duration-300 resize-none ${
+                                            errors.message
+                                                ? 'border-red-400 focus:ring-red-400'
+                                                : 'border-white/10 hover:border-cyan-400/50'
+                                        }`}
+                                    ></textarea>
+                                    {errors.message && (
                                         <p className="text-red-400 text-sm flex items-center gap-1">
                                             <FaExclamationCircle className="w-3 h-3" />
-                                            {errors.name}
+                                            {errors.message}
                                         </p>
+                                    )}
+                                    <p className="text-xs text-slate-400">{formData.message.length}/500 characters</p>
+                                </div>
+
+                                {/* Submit Button */}
+                                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                                    <button
+                                        type="submit"
+                                        disabled={isSubmitting}
+                                        className={`w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-medium rounded-xl hover:shadow-lg transition-all duration-300 ${
+                                            isSubmitting
+                                                ? 'opacity-70 cursor-not-allowed'
+                                                : 'hover:scale-105 active:scale-95'
+                                        }`}
+                                    >
+                                        {isSubmitting ? (
+                                            <>
+                                                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                                                Sending...
+                                            </>
+                                        ) : (
+                                            <>
+                                                Send Message
+                                                <FaPaperPlane className="w-4 h-4" />
+                                            </>
+                                        )}
+                                    </button>
+
+                                    {result && (
+                                        <div
+                                            className={`text-sm flex items-center gap-2 px-4 py-2 rounded-lg ${
+                                                result.includes('success')
+                                                    ? 'text-emerald-400 bg-emerald-500/10 border border-emerald-500/20'
+                                                    : result.includes('Sending')
+                                                        ? 'text-cyan-400 bg-cyan-500/10 border border-cyan-500/20'
+                                                        : 'text-red-400 bg-red-500/10 border border-red-500/20'
+                                            }`}
+                                        >
+                                            {result.includes('success') && <FaCheck className="w-4 h-4" />}
+                                            {result.includes('Failed') && <FaExclamationCircle className="w-4 h-4" />}
+                                            {result}
+                                        </div>
                                     )}
                                 </div>
 
-                                {/* Email Field */}
-                                <div className="space-y-2">
-                                    <label className="block text-sm font-medium text-slate-300">
-                                        Email Address *
-                                    </label>
-                                    <div className="relative">
-                                        <FaEnvelope className="absolute left-4 top-1/2 transform -translate-y-1/2 text-cyan-400 text-sm" />
-                                        <input
-                                            type="email"
-                                            name="email"
-                                            placeholder="Enter your email"
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            className={`w-full pl-12 pr-4 py-3 bg-slate-800/50 border rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-slate-100 placeholder-slate-400 transition-all duration-300 ${
-                                                errors.email ? 'border-red-400 focus:ring-red-400' : 'border-white/10 hover:border-cyan-400/50'
-                                            }`}
-                                        />
-                                    </div>
-                                    {errors.email && (
-                                        <p className="text-red-400 text-sm flex items-center gap-1">
-                                            <FaExclamationCircle className="w-3 h-3" />
-                                            {errors.email}
-                                        </p>
-                                    )}
-                                </div>
-
-                                {/* Phone Field */}
-                                <div className="space-y-2">
-                                    <label className="block text-sm font-medium text-slate-300">
-                                        Phone Number
-                                    </label>
-                                    <div className="relative">
-                                        <FaPhone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-cyan-400 text-sm" />
-                                        <input
-                                            type="tel"
-                                            name="phone"
-                                            placeholder="Enter your phone number"
-                                            value={formData.phone}
-                                            onChange={handleChange}
-                                            className="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-slate-100 placeholder-slate-400 transition-all duration-300 hover:border-cyan-400/50"
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* Subject Field */}
-                                <div className="space-y-2">
-                                    <label className="block text-sm font-medium text-slate-300">
-                                        Subject
-                                    </label>
-                                    <div className="relative">
-                                        <FaEdit className="absolute left-4 top-1/2 transform -translate-y-1/2 text-cyan-400 text-sm" />
-                                        <input
-                                            type="text"
-                                            name="subject"
-                                            placeholder="What's this about?"
-                                            value={formData.subject}
-                                            onChange={handleChange}
-                                            className="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-slate-100 placeholder-slate-400 transition-all duration-300 hover:border-cyan-400/50"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Message Field */}
-                            <div className="space-y-2 mb-8">
-                                <label className="block text-sm font-medium text-slate-300">
-                                    Message *
-                                </label>
-                                <textarea
-                                    name="message"
-                                    placeholder="Tell me about your project or how I can help you..."
-                                    rows="5"
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                    maxLength="500"
-                                    className={`w-full p-4 bg-slate-800/50 border rounded-xl focus:outline-none focus:ring-2 focus:ring-cyan-400 text-slate-100 placeholder-slate-400 transition-all duration-300 resize-none ${
-                                        errors.message ? 'border-red-400 focus:ring-red-400' : 'border-white/10 hover:border-cyan-400/50'
-                                    }`}
-                                ></textarea>
-                                {errors.message && (
-                                    <p className="text-red-400 text-sm flex items-center gap-1">
-                                        <FaExclamationCircle className="w-3 h-3" />
-                                        {errors.message}
-                                    </p>
-                                )}
-                                <p className="text-xs text-slate-400">
-                                    {formData.message.length}/500 characters
+                                <p className="text-xs text-slate-400 mt-6 text-center">
+                                    * Required fields. Your information will be kept confidential.
                                 </p>
-                            </div>
-
-                            {/* Submit Button */}
-                            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                                <button
-                                    type="button"
-                                    onClick={onSubmit}
-                                    disabled={isSubmitting}
-                                    className={`w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-medium rounded-xl hover:shadow-lg transition-all duration-300 ${
-                                        isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:scale-105 active:scale-95'
-                                    }`}
-                                >
-                                    {isSubmitting ? (
-                                        <>
-                                            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                                            Sending...
-                                        </>
-                                    ) : (
-                                        <>
-                                            Send Message
-                                            <FaPaperPlane className="w-4 h-4" />
-                                        </>
-                                    )}
-                                </button>
-
-                                {result && (
-                                    <div className={`text-sm flex items-center gap-2 px-4 py-2 rounded-lg ${
-                                        result.includes('success') ? 'text-emerald-400 bg-emerald-500/10 border border-emerald-500/20' :
-                                            result.includes('Sending') ? 'text-cyan-400 bg-cyan-500/10 border border-cyan-500/20' : 'text-red-400 bg-red-500/10 border border-red-500/20'
-                                    }`}>
-                                        {result.includes('success') && <FaCheck className="w-4 h-4" />}
-                                        {result.includes('Failed') && <FaExclamationCircle className="w-4 h-4" />}
-                                        {result}
-                                    </div>
-                                )}
-                            </div>
-
-                            <p className="text-xs text-slate-400 mt-6 text-center">
-                                * Required fields. Your information will be kept confidential.
-                            </p>
+                            </form>
                         </div>
                     </div>
                 </div>
