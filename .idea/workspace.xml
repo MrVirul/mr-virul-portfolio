@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ad89fdb-bd76-4f62-a759-ec2ac226bea9" name="Changes" comment="feat: enhance About, Header, and Services components; add Machine Learning service and improve layout and styling">
+    <list default="true" id="5ad89fdb-bd76-4f62-a759-ec2ac226bea9" name="Changes" comment="feat: refactor Contact component for improved code readability and structure; enhance form handling and validation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +130,8 @@
       <workItem from="1754772190727" duration="145000" />
       <workItem from="1755413084034" duration="7724000" />
       <workItem from="1755506824819" duration="19000" />
-      <workItem from="1755784231225" duration="1056000" />
+      <workItem from="1755784231225" duration="1199000" />
+      <workItem from="1755880161089" duration="758000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add About component; enhance layout, styling, and functionality across components">
       <option name="closed" value="true" />
@@ -252,7 +253,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755436834113</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feat: refactor Contact component for improved code readability and structure; enhance form handling and validation">
+      <option name="closed" value="true" />
+      <created>1755785469120</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1755785469120</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,6 +298,7 @@
     <MESSAGE value="feat: update workspace.xml to enhance Contact component with improved validation and UI updates" />
     <MESSAGE value="feat: update About, Contact, and Navbar components; add Spring Boot icon and clean up commented code" />
     <MESSAGE value="feat: enhance About, Header, and Services components; add Machine Learning service and improve layout and styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: enhance About, Header, and Services components; add Machine Learning service and improve layout and styling" />
+    <MESSAGE value="feat: refactor Contact component for improved code readability and structure; enhance form handling and validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: refactor Contact component for improved code readability and structure; enhance form handling and validation" />
   </component>
 </project>
